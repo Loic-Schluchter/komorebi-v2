@@ -3,7 +3,7 @@ function KomorebiBackground() {
   return (
     <>
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 pointer-events: none"
         style={{
           background:
             "linear-gradient(160deg, rgb(45,74,53) 0%, rgb(26,41,32) 40%, rgb(74,109,82) 70%, rgb(31,48,36) 100%)",
@@ -11,7 +11,7 @@ function KomorebiBackground() {
       />
 
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 pointer-events: none"
         style={{
           background:
             "repeating-linear-gradient(45deg, transparent 0px, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 3px)",
@@ -19,14 +19,14 @@ function KomorebiBackground() {
         }}
       />
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 pointer-events: none"
         style={{
           background: "radial-gradient(circle at 50% 60%, transparent 30%, rgba(0,0,0,0.35) 100%)",
         }}
       />
 
       <div
-        className="absolute top-0 h-full"
+        className="absolute top-0 h-full pointer-events: none"
         style={{
           left: "40%",
           width: "20%",
@@ -35,7 +35,7 @@ function KomorebiBackground() {
         }}
       />
       <div
-        className="absolute top-0 h-full"
+        className="absolute top-0 h-full pointer-events: none"
         style={{
           left: "60%",
           width: "15%",

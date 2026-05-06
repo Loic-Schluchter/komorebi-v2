@@ -3,6 +3,8 @@
 @theme {
   --font-sans: var(--font-inter);
   --font-serif: var(--font-cormorant);
-  --font-japanese: var (--font-shippori)
 }
 
+@utility font-japanese {
+  font-family: var(--font-shippori);
+}

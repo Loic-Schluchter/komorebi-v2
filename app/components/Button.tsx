@@ -1,13 +1,16 @@
+'use client';
+
 import Link from "next/link";
 
 type ButtonProps = {
   children: React.ReactNode;
   href?: string;
+  onClick?: () => void;
 };
 
-function Button({ children, href }: ButtonProps) {
+function Button({ children, href, onClick }: ButtonProps) {
   const className =
-    "bg-[#B8392C] w-3/4 py-3 rounded-full text-[16px] font-medium uppercase text-white shadow-[0_0_60px_15px_rgba(184,57,44,0.4)] z-10 text-center";
+    "bg-[#B8392C] w-full py-3 rounded-full text-[16px] font-medium uppercase text-white shadow-red-800/10 shadow-xl z-10 text-center";
 
   if (href) {
     return (
@@ -16,7 +19,7 @@ function Button({ children, href }: ButtonProps) {
       </Link>
     );
   }
-  return <button className={className}>{children}</button>;
+  return <button className={className} onClick={onClick}>{children}</button>;
 }
 
 export default Button;

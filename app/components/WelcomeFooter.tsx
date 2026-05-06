@@ -2,12 +2,16 @@ import Button from "./Button";
 import Torii from "./Torii";
 
 function WelcomeFooter() {
+
   return (
-    <div className="flex flex-col justify-center items-center w-full gap-2 mb-18 ">
+    <div className="flex flex-col justify-center items-center w-full gap-2 mb-10 ">
       <div className="relative top-10">
         <Torii />
       </div>
-      <Button href="/onboarding">Begin the journey</Button>
+      <div className="w-3/4 flex justify-center">
+        <Button href="/onboarding">Begin the journey</Button>
+
+      </div>
       <p className="z-10 text-[14px]">
         Already have an account? <span className="underline">Sign in</span>
       </p>
