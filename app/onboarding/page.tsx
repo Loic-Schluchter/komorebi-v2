@@ -5,6 +5,7 @@ import Button from "../components/Button";
 import { Dot } from "lucide-react";
 import Image from "next/image";
 import { motion } from "motion/react";
+import ProgressionBar from "../components/ProgressionBar";
 
 type Step = {
   kanji: string;
@@ -73,29 +74,37 @@ function OnboardingPage() {
     <motion.div
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
-      className="w-screen h-svh flex flex-col justify-between"
+      className="w-screen h-svh flex flex-col"
       style={{
         background: `linear-gradient(to bottom, ${steps[currentStep].bgColor} 20%, #0d1f15 60%)`,
       }}
     >
-      <div className="absolute top-0 right-0 z-10 m-10">
+      <div className="absolute z-10 flex justify-between items-center w-full p-6">
+        <ProgressionBar currentStep={currentStep} />
         <button className="text-white" onClick={handleSkip}>
           SKIP
         </button>
       </div>
       <div className=" relative w-full h-full ">
-        <Image src={steps[currentStep].image} alt={steps[currentStep].label} fill className="object-cover" priority />
+        <Image
+          src={steps[currentStep].image}
+          alt={steps[currentStep].label}
+          fill
+          sizes="width: 800px, height: 800px"
+          className="object-cover"
+          priority
+        />
       </div>
 
-      <div className="flex flex-col items-start justify-end gap-2 px-10 my-12">
-        <span className="flex gap-2 text-[#C89858] text-xl">
+      <div className="flex flex-col items-start justify-center gap-4 px-10 h-200">
+        <div className="flex gap-2 text-[#C89858] text-xl">
           <span className="font-japanese">{steps[currentStep].kanji}</span> <Dot />{" "}
           <span className="font-serif font-bold ">{steps[currentStep].label}</span>
-        </span>
-        <h1 className=" font-serif text-4xl italic text-white text-balance">{steps[currentStep].title}</h1>
-        <p className="text-[0.9rem] text-white">{steps[currentStep].description}</p>
+        </div>
+        <h1 className=" font-serif text-5xl italic text-white text-balance">{steps[currentStep].title}</h1>
+        <p className="text-[1rem] text-white">{steps[currentStep].description}</p>
         <div className=" flex justify-center w-full mt-6">
-          <Button onClick={handleNext}>Continue</Button>
+          <Button onClick={handleNext}>{currentStep === steps.length - 1 ? "Enter Komorebi" : "Continue"}</Button>
         </div>
       </div>
     </motion.div>

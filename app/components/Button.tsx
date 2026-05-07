@@ -10,7 +10,7 @@ type ButtonProps = {
 
 function Button({ children, href, onClick }: ButtonProps) {
   const className =
-    "bg-[#B8392C] w-full py-3 rounded-full text-[16px] font-medium uppercase text-white shadow-red-800/10 shadow-xl z-10 text-center";
+    "bg-[#B8392C] w-full py-3 rounded-full text-[14px] font-bold uppercase text-white shadow-red-800/10 shadow-xl z-10 text-center";
 
   if (href) {
     return (
