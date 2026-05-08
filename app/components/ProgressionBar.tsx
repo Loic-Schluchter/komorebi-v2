@@ -1,7 +1,14 @@
 import { motion } from "motion/react";
 
-function ProgressionBar({ currentStep }: { currentStep: number }) {
-  const progress = [1, 2, 3];
+
+type ProgressionBarProps = {
+  currentStep: number;
+  total: number;
+}
+
+
+function ProgressionBar({ currentStep, total }: ProgressionBarProps) {
+  const progress = Array.from({ length: total }, (_, i) => i + 1);
 
   return (
     <div className="flex gap-1">

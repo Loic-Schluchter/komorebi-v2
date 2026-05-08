@@ -1,11 +1,15 @@
 import React from 'react'
 
-function page() {
+import HomeCarousel from '../components/HomeCarousel';
+import HomeInput from '../components/HomeInput';
+
+function HomePage() {
   return (
-    <div>
-      <h1>home</h1>
-    </div>
-  )
+    <main className="min-h-svh w-screen bg-[#0d1f15] px-6 pt-10 text-[#F2E9D6]">
+      <HomeInput />
+      <HomeCarousel />
+    </main>
+  );
 }
 
-export default page
+export default HomePage

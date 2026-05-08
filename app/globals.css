@@ -3,8 +3,11 @@
 @theme {
   --font-sans: var(--font-inter);
   --font-serif: var(--font-cormorant);
+  --color-komorebi-gold: #C89858;
 }
 
 @utility font-japanese {
   font-family: var(--font-shippori);
 }
+
+

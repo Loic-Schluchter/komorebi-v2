@@ -80,7 +80,7 @@ function OnboardingPage() {
       }}
     >
       <div className="absolute z-10 flex justify-between items-center w-full p-6">
-        <ProgressionBar currentStep={currentStep} />
+        <ProgressionBar currentStep={currentStep} total={steps.length} />
         <button className="text-white" onClick={handleSkip}>
           SKIP
         </button>
@@ -97,7 +97,7 @@ function OnboardingPage() {
       </div>
 
       <div className="flex flex-col items-start justify-center gap-4 px-10 h-200">
-        <div className="flex gap-2 text-[#C89858] text-xl">
+        <div className="flex gap-2 text-komorebi-gold text-xl">
           <span className="font-japanese">{steps[currentStep].kanji}</span> <Dot />{" "}
           <span className="font-serif font-bold ">{steps[currentStep].label}</span>
         </div>
