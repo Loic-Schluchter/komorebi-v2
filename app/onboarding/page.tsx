@@ -97,7 +97,7 @@ function OnboardingPage() {
       </div>
 
       <div className="flex flex-col items-start justify-center gap-4 px-10 h-200">
-        <div className="flex gap-2 text-komorebi-gold text-xl">
+        <div className="flex gap-2 text-komorebi-gold text-xl ">
           <span className="font-japanese">{steps[currentStep].kanji}</span> <Dot />{" "}
           <span className="font-serif font-bold ">{steps[currentStep].label}</span>
         </div>
