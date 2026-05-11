@@ -13,7 +13,7 @@ function HomePage() {
     <main className="min-h-svh w-screen bg-[#0d1f15] px-6 pt-10 text-[#F2E9D6]">
       <HomeInput />
       <HomeCarousel onActiveChange={setActiveIndex} />
-      <MoodCard location={activeCity.name} weather={"Clear"} />
+      <MoodCard location={activeCity.name} />
     </main>
   );
 }

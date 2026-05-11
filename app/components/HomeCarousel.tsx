@@ -1,43 +1,70 @@
 "use client";
 import { cities } from "@/app/lib/cities";
-import { on } from "events";
 import { MoveRight } from "lucide-react";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 
 function HomeCarousel({ onActiveChange }: { onActiveChange: (index: number) => void }) {
   const maxItems = 10;
-  const carouselRef = React.useRef<HTMLUListElement>(null);
+  const carouselRef = useRef<HTMLUListElement>(null);
+
+  const findCenterCard = useCallback(() => {
+    const carousel = carouselRef.current;
+    if (!carousel) return;
+
+    const carouselRect = carousel.getBoundingClientRect();
+    const centerX = carouselRect.left + carouselRect.width / 2;
+
+    const cards = carousel.querySelectorAll("li");
+    let closestIndex = 0;
+    let closestDist = Infinity;
+
+    cards.forEach((card) => {
+      const rect = card.getBoundingClientRect();
+      const cardCenter = rect.left + rect.width / 2;
+      const dist = Math.abs(cardCenter - centerX);
+      if (dist < closestDist) {
+        closestDist = dist;
+        closestIndex = Number(card.getAttribute("data-index"));
+      }
+    });
+
+    onActiveChange(closestIndex);
+  }, [onActiveChange]);
 
   useEffect(() => {
     const carousel = carouselRef.current;
     if (!carousel) return;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = Number(entry.target.getAttribute("data-index"));
-            onActiveChange(index);
-          }
-        });
-      },
-      {
-        root: carousel,
-        threshold: 0.5,
-      },
-    );
-    const cards = carousel.querySelectorAll("li");
-    cards.forEach((card) => {
-      observer.observe(card);
-    });
-    return () => observer.disconnect();
-  }, [onActiveChange]);
+
+    let timeout: ReturnType<typeof setTimeout>;
+
+    const onScrollEnd = () => findCenterCard();
+
+    const onScroll = () => {
+      clearTimeout(timeout);
+      timeout = setTimeout(findCenterCard, 150);
+    };
+
+    if ("onscrollend" in carousel) {
+      carousel.addEventListener("scrollend", onScrollEnd);
+    }
+    carousel.addEventListener("scroll", onScroll);
+
+    // Init
+    findCenterCard();
+
+    return () => {
+      carousel.removeEventListener("scrollend", onScrollEnd);
+      carousel.removeEventListener("scroll", onScroll);
+      clearTimeout(timeout);
+    };
+  }, [findCenterCard]);
 
   return (
     <>
       <div className="py-4 flex justify-between items-center text-[0.8rem] uppercase tracking-wider noScrollbar">
         <h2 className="text-komorebi-gold text-[0.8rem] uppercase tracking-wider">Destinations · {cities.length}</h2>
-        <button className="font-serif italic  flex items-center gap-2 text-lg">
+        <button className="font-serif italic flex items-center gap-2 text-lg">
           See all <MoveRight size={16} />
         </button>
       </div>

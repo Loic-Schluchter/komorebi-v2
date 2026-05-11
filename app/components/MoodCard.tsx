@@ -1,16 +1,52 @@
-import { moodPrompts, weatherCondition } from "@/app/lib/mood-prompts";
-import React, { useMemo } from "react";
+import { moodPrompts } from "@/app/lib/mood-prompts";
+import React, { useEffect, useState, useMemo } from "react";
 import SunsetBar from "./SunsetBar";
 
-function MoodCard({ location, weather }: { location: string; weather: weatherCondition }) {
+export type CityWeather = {
+  conditions: string;
+  sunrise: number;
+  sunset: number;
+};
+
+function MoodCard({ location }: { location: string }) {
+  const [cityData, setCityData] = useState<CityWeather | null>(null);
+
   const mood = useMemo(() => {
-    const matching = moodPrompts.filter((p) => p.weather === weather);
-    if (matching.length === 0) {
-      console.log(`No mood prompts found for weather condition: ${weather}`);
+    const condition = cityData?.conditions;
+
+    if (!condition) {
       return moodPrompts[0];
     }
+
+    const matching = moodPrompts.filter((p) => p.weather === condition);
+
+    if (matching.length === 0) {
+      return moodPrompts[0];
+    }
+
     return matching[Math.floor(Math.random() * matching.length)];
-  }, [weather, location]);
+  }, [cityData?.conditions]);
+
+  useEffect(() => {
+    async function fetchWeather() {
+      try {
+        const response = await fetch(`/api/weather?city=${encodeURIComponent(location)}`);
+        if (!response.ok) {
+          throw new Error("Failed to fetch weather data");
+        }
+        const data: CityWeather = await response.json();
+
+        setCityData({
+          conditions: data.conditions,
+          sunrise: data.sunrise,
+          sunset: data.sunset,
+        });
+      } catch (error) {
+        console.error("Error fetching weather data:", error);
+      }
+    }
+    fetchWeather();
+  }, [location]);
 
   return (
     <div className=" bg-[#1E2118] border-amber-200/10 border h-60 rounded-2xl px-6 py-2 flex flex-col gap-4 justify-center">
@@ -23,9 +59,7 @@ function MoodCard({ location, weather }: { location: string; weather: weatherCon
         <p className=" border-b border-white/10 italic"></p>
       </div>
       <h2 className="uppercase text-[12px]">light today</h2>
-      <div>
-        <SunsetBar />
-      </div>
+      <div>{cityData && <SunsetBar sunrise={cityData.sunrise} sunset={cityData.sunset} />}</div>
     </div>
   );
 }

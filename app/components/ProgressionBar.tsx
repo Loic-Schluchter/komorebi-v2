@@ -1,11 +1,9 @@
 import { motion } from "motion/react";
 
-
 type ProgressionBarProps = {
   currentStep: number;
   total: number;
-}
-
+};
 
 function ProgressionBar({ currentStep, total }: ProgressionBarProps) {
   const progress = Array.from({ length: total }, (_, i) => i + 1);
@@ -17,7 +15,7 @@ function ProgressionBar({ currentStep, total }: ProgressionBarProps) {
         return (
           <motion.div
             key={step}
-            className={`h-2 rounded-full ${isActive ? "bg-[#C89858]" : "bg-white/80"}`}
+            className={`h-2 rounded-full ${isActive ? "bg-komorebi-gold" : "bg-white/80"}`}
             animate={{
               width: isActive ? 28 : 14,
             }}

@@ -49,11 +49,11 @@ function OnboardingPage() {
   const router = useRouter();
   const [currentStep, setCurrentStep] = useState(0);
 
-  /*useEffect(() => {
+  useEffect(() => {
     if (localStorage.getItem('onboardingCompleted') === 'true') {
       router.replace('/home');
     }
-   }, [router]) */
+   }, [router])
 
   const handleNext = () => {
     console.log("Next button clicked");

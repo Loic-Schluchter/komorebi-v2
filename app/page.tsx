@@ -5,7 +5,7 @@ export default function Home() {
  
 
   return (
-    <main className=" relative overflow-hidden h-svh  w-screen flex flex-col items-center justify-between text-white">
+    <main className=" relative overflow-hidden min-h-svh  w-screen flex flex-col items-center justify-between text-white">
       <KomorebiBackground />
       <div />
       <div className="flex flex-col justify-center items-center gap-6 z-10">
