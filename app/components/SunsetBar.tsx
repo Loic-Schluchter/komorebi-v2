@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-type City = {
+interface City  {
   sunrise: number;
   sunset: number;
 };
