@@ -1,322 +1,363 @@
 export type City = {
-  slug: string;
-  name: string;
-  japaneseName: string;
-  image: string;
-  description: string;
+    slug: string;
+    name: string;
+    japaneseName: string;
+    image: string;
+    description: string;
+    island: string;
+    region: string;
 };
 
 export const cities: City[] = [
-  {
-    name: "Tokyo",
-    slug: "tokyo",
-    japaneseName: "東京",
-    image: "/cities/tokyo.webp",
-    description:
-      "Tokyo is the capital of Japan and the world's most populous metropolis, seamlessly blending ultramodern skyscrapers, neon-lit streets, and cutting-edge technology with traditional temples, shrines, and gardens.",
-  },
-  {
-    name: "Kyoto",
-    slug: "kyoto",
-    japaneseName: "京都",
-    image: "/cities/kyoto.webp",
-    description:
-      "Kyoto is the country's cultural and historical heart, often called its spiritual home. Located in a mountain-ringed basin, the city is renowned for its 2,000+ temples and shrines, traditional wooden machiya houses, exquisite gardens, and refined, 1,200-year-old culture.",
-  },
-  {
-    name: "Osaka",
-    slug: "osaka",
-    japaneseName: "大阪",
-    image: "/cities/osaka.webp",
-    description:
-      "Osaka is Japan's third-largest city and a vibrant, culinary-focused metropolis in the Kansai region known as the Nation's Kitchen. Famed for its outgoing locals, neon-lit nightlife, and street food like takoyaki, Osaka offers a relaxed, modern alternative to Tokyo, featuring major landmarks like Osaka Castle and Dotonbori.",
-  },
-  {
-    name: "Yokohama",
-    slug: "yokohama",
-    japaneseName: "横浜",
-    image: "/cities/yokohama.webp",
-    description:
-      "Yokohama is Japan's second-largest city and a major, historically significant port located just south of Tokyo in Kanagawa Prefecture. Renowned for its international flair, scenic waterfront, and the futuristic Minato Mirai 21 district, it offers a more relaxed, modern alternative to Tokyo while functioning as a key commercial hub.",
-  },
-  {
-    name: "Hiroshima",
-    slug: "hiroshima",
-    japaneseName: "広島",
-    image: "/cities/hiroshima.webp",
-    description:
-      "Hiroshima is a powerful symbol of peace and resilience, rebuilt after the devastating 1945 atomic bombing into a thriving modern city. Its iconic Peace Memorial Park and Museum stand as solemn reminders of the past, while the nearby island of Miyajima with its famous floating torii gate draws visitors from around the world.",
-  },
-  {
-    name: "Nara",
-    slug: "nara",
-    japaneseName: "奈良",
-    image: "/cities/nara.webp",
-    description:
-      "Nara is Japan's first permanent capital and a UNESCO World Heritage city, famous for its freely roaming sacred deer and monumental landmarks. Home to Todai-ji temple housing Japan's largest bronze Buddha, the vast Nara Park, and ancient Kasuga Taisha shrine.",
-  },
-  {
-    name: "Hakone",
-    slug: "hakone",
-    japaneseName: "箱根",
-    image: "/cities/hakone.webp",
-    description:
-      "Hakone is a renowned mountain resort town in Kanagawa Prefecture, celebrated for its spectacular views of Mount Fuji, natural hot springs, and serene landscapes. A classic escape from Tokyo, it offers ryokan stays, the scenic Lake Ashi, open-air museums, and traditional crafts.",
-  },
-  {
-    name: "Nikko",
-    slug: "nikko",
-    japaneseName: "日光",
-    image: "/cities/nikko.webp",
-    description:
-      "Nikko is a mountainous UNESCO World Heritage town north of Tokyo, famous for its extraordinarily ornate Tosho-gu shrine complex. Surrounded by dense cedar forests, dramatic waterfalls, and serene Lake Chuzenji, it offers a striking contrast between lavish historic architecture and pristine natural scenery.",
-  },
-  {
-    name: "Okinawa",
-    slug: "okinawa",
-    japaneseName: "沖縄",
-    image: "/cities/okinawa.webp",
-    description:
-      "Okinawa is Japan's southernmost prefecture, an archipelago of subtropical islands with a distinct Ryukyuan culture and history. Renowned for its crystal-clear turquoise waters, vibrant coral reefs, white sand beaches, unique cuisine, and the ancient Shuri Castle.",
-  },
-  {
-    name: "Nagoya",
-    slug: "nagoya",
-    japaneseName: "名古屋市",
-    image: "/cities/nagoya.webp",
-    description:
-      "Nagoya is Japan's fourth-largest city and a major industrial, historical, and transportation hub located in the center of Honshu. As the capital of Aichi Prefecture, it is famously the birthplace of the Toyota Motor Corporation and a center for manufacturing, including aerospace and ceramics.",
-  },
-  {
-    name: "Sapporo",
-    slug: "sapporo",
-    japaneseName: "札幌市",
-    image: "/cities/sapporo.webp",
-    description:
-      "Sapporo is the capital of Japan's northernmost island, Hokkaido, and the nation's 4th largest city. Known for its snowy winters, renowned beer, and rich ramen culture, it is a hub of nature and urban life. Famous for hosting the 1972 Winter Olympics and the annual Snow Festival.",
-  },
-  {
-    name: "Fukuoka",
-    slug: "fukuoka",
-    japaneseName: "福岡市",
-    image: "/cities/fukuoka.webp",
-    description:
-      "Fukuoka is a vibrant, fast-growing coastal city on Japan's Kyushu island, serving as a historic gateway to Asia. Renowned for its relaxed atmosphere, rich culinary scene (especially tonkotsu ramen), and historic Hakata district, it perfectly blends modern urban life with traditional charm.",
-  },
-  {
-    name: "Kobe",
-    slug: "kobe",
-    japaneseName: "神戸",
-    image: "/cities/kobe.webp",
-    description:
-      "Kobe is a sophisticated port city nestled between the Rokko mountains and Osaka Bay, long renowned for its cosmopolitan atmosphere and international influences. Famous worldwide for its premium Kobe beef, stylish Kitano district with Western-style residences, and vibrant Chinatown.",
-  },
-  {
-    name: "Kamakura",
-    slug: "kamakura",
-    japaneseName: "鎌倉",
-    image: "/cities/kamakura.webp",
-    description:
-      "Kamakura is a coastal city south of Tokyo that served as Japan's political center during the 12th to 14th centuries. Renowned for its Great Buddha, numerous Zen temples, and scenic hiking trails through forested hills, it offers a perfect blend of history, spirituality, and natural beauty.",
-  },
-  {
-    name: "Kanazawa",
-    slug: "kanazawa",
-    japaneseName: "金沢",
-    image: "/cities/kanazawa.webp",
-    description:
-      "Kanazawa is a beautifully preserved castle town on the Sea of Japan coast, often called Little Kyoto for its rich cultural heritage. Home to Kenroku-en, one of Japan's three great gardens, along with samurai and geisha districts and traditional crafts like Kutani porcelain and gold leaf.",
-  },
-  {
-    name: "Nagasaki",
-    slug: "nagasaki",
-    japaneseName: "長崎",
-    image: "/cities/nagasaki.webp",
-    description:
-      "Nagasaki is a hilly, atmospheric port city with a uniquely cosmopolitan history as Japan's main gateway to the outside world during its period of isolation. Carrying the profound legacy of the 1945 atomic bombing, it also boasts a rich blend of Dutch, Chinese, and Portuguese influences.",
-  },
-  {
-    name: "Sendai",
-    slug: "sendai",
-    japaneseName: "仙台",
-    image: "/cities/sendai.webp",
-    description:
-      "Sendai is the largest city in the Tohoku region and a vibrant modern metropolis known as the City of Trees for its zelkova-lined boulevards. Gateway to Matsushima bay and the nearby Zao mountains, it blends urban energy with easy access to nature and rich samurai heritage.",
-  },
-  {
-    name: "Matsuyama",
-    slug: "matsuyama",
-    japaneseName: "松山",
-    image: "/cities/matsuyama.webp",
-    description:
-      "Matsuyama is the largest city on Shikoku island and home to one of Japan's finest original feudal castles. Famous for Dogo Onsen, one of the oldest hot spring bathhouses in Japan said to have inspired Studio Ghibli's Spirited Away, it exudes a relaxed, literary atmosphere.",
-  },
-  {
-    name: "Takayama",
-    slug: "takayama",
-    japaneseName: "高山",
-    image: "/cities/takayama.webp",
-    description:
-      "Takayama is a beautifully preserved Edo-period town nestled in the Japanese Alps of Gifu Prefecture. Its historic Sanmachi Suji merchant district, traditional sake breweries, vibrant morning markets, and proximity to the thatched-roof villages of Shirakawa-go make it one of Japan's most atmospheric destinations.",
-  },
-  {
-    name: "Kumamoto",
-    slug: "kumamoto",
-    japaneseName: "熊本",
-    image: "/cities/kumamoto.webp",
-    description:
-      "Kumamoto is a dynamic city on Kyushu island, home to one of Japan's most impressive feudal castles. Known for its spicy local cuisine, the beautiful Suizenji Jojuen garden, and as the gateway to the dramatic Aso volcanic caldera, it perfectly blends history and natural wonder.",
-  },
-  {
-    name: "Tsushima",
-    slug: "tsushima",
-    japaneseName: "対馬",
-    image: "/cities/tsushima.webp",
-    description:
-      "Tsushima is a remote, rugged island in the Korea Strait, known for its pristine nature, dense forests, and rich samurai history. Famous as the setting of the legendary Battle of Tsushima and the popular video game Ghost of Tsushima, the island offers untouched landscapes and ancient shrines.",
-  },
-  {
-    name: "Nagano",
-    slug: "nagano",
-    japaneseName: "長野",
-    image: "/cities/nagano.webp",
-    description:
-      "Nagano is a mountain city in central Honshu, renowned for hosting the 1998 Winter Olympics and as the gateway to the Japanese Alps. Famous for the snow monkeys of Jigokudani, the historic Zenko-ji temple, and world-class ski resorts like Hakuba and Shiga Kogen.",
-  },
-  {
-    name: "Beppu",
-    slug: "beppu",
-    japaneseName: "別府",
-    image: "/cities/beppu.webp",
-    description:
-      "Beppu is Japan's hot spring capital on the island of Kyushu, producing more geothermal water than anywhere else in the country except Yellowstone. Famous for its eight 'Hells' — spectacular boiling pools of vivid colors — and its abundant onsen bathhouses, it is an unmissable destination for hot spring lovers.",
-  },
-  {
-    name: "Miyajima",
-    slug: "miyajima",
-    japaneseName: "宮島",
-    image: "/cities/miyajima.webp",
-    description:
-      "Miyajima is a sacred island near Hiroshima, considered one of Japan's three most scenic views. Famous for the iconic floating torii gate of Itsukushima Shrine — a UNESCO World Heritage Site — the island is also home to wild deer, a mountaintop cable car, and traditional momiji manju sweets.",
-  },
-  {
-    name: "Kochi",
-    slug: "kochi",
-    japaneseName: "高知",
-    image: "/cities/kochi.webp",
-    description:
-      "Kochi is the capital of Kochi Prefecture on Shikoku island, known for its original feudal castle, vibrant Sunday market, and free-spirited local culture. Gateway to Cape Ashizuri and the rugged Shimanto River, the city is renowned for its bonito fish cuisine, warm climate, and lively Yosakoi festival.",
-  },
-  {
-    name: "Aomori",
-    slug: "aomori",
-    japaneseName: "青森",
-    image: "/cities/aomori.webp",
-    description:
-      "Aomori is the northernmost major city on Honshu, famous for its spectacular Nebuta Festival featuring enormous illuminated floats, and as the gateway to the sacred Mount Osore and the pristine Shirakami-Sanchi UNESCO forest. Known for Japan's finest apples and fresh seafood from its cold northern waters.",
-  },
-  {
-    name: "Hirosaki",
-    slug: "hirosaki",
-    japaneseName: "弘前",
-    image: "/cities/hirosaki.webp",
-    description:
-      "Hirosaki is a historic castle town in Aomori Prefecture, celebrated as one of Japan's premier cherry blossom destinations each spring. Its well-preserved Hirosaki Castle surrounded by over 2,500 cherry trees, along with Western-style Meiji-era architecture, traditional Tsugaru culture, and the backdrop of Mount Iwaki make it uniquely charming.",
-  },
-  {
-    name: "Matsumoto",
-    slug: "matsumoto",
-    japaneseName: "松本",
-    image: "/cities/matsumoto.webp",
-    description:
-      "Matsumoto is a gateway city to the Japanese Alps in Nagano Prefecture, home to Matsumoto Castle, one of Japan's most beautiful and best-preserved original feudal castles with its striking black exterior. Surrounded by the Northern Alps, it offers world-class mountaineering, pristine nature, and a vibrant arts scene.",
-  },
-  {
-    name: "Himeji",
-    slug: "himeji",
-    japaneseName: "姫路",
-    image: "/cities/himeji.webp",
-    description:
-      "Himeji is home to Himeji Castle, widely considered Japan's most magnificent feudal castle and a UNESCO World Heritage Site. Known as the White Heron Castle for its brilliant white exterior, it survived both World War II and earthquakes intact, making it the finest surviving example of traditional Japanese castle architecture.",
-  },
-  {
-    name: "Kagoshima",
-    slug: "kagoshima",
-    japaneseName: "鹿児島",
-    image: "/cities/kagoshima.webp",
-    description:
-      "Kagoshima is a vibrant southern city on Kyushu island, dramatically dominated by the active Sakurajima volcano rising from the bay. Often called the Naples of the Eastern world for its bay setting and volcanic backdrop, it is famous for its samurai heritage, black pork cuisine, shochu distilleries, and proximity to Yakushima island.",
-  },
-  {
-    name: "Nishinomiya",
-    slug: "nishinomiya",
-    japaneseName: "西宮市",
-    image: "/cities/nishinomiya.webp",
-    description:
-      "Nishinomiya is a city located in Hyōgo Prefecture, Nishinomiya is an important commercial and shipping city in the Kansai region with the third largest population in Hyōgo Prefecture. Nishinomiya is best known as the home of Koshien Stadium, where the Hanshin Tigers baseball team plays home games and where Japan's annual high school baseball championship is held.",
-  },
-  {
-    name: "Shirakawa-go",
-    slug: "shirakawa-go",
-    japaneseName: "白川郷",
-    image: "/cities/shirakawa-go.webp",
-    description:
-      "Shirakawa-go is a UNESCO World Heritage mountainous village in Gifu Prefecture, famous for its extraordinary gasshō-zukuri farmhouses with steep thatched roofs designed to withstand heavy snowfall. Particularly magical in winter when blanketed in deep snow, the village offers an immersive glimpse into rural Japanese life preserved across centuries.",
-  },
-  {
-    name: "Hakodate",
-    slug: "hakodate",
-    japaneseName: "函館",
-    image: "/cities/hakodate.webp",
-    description:
-      "Hakodate is a port city at the southern tip of Hokkaido, renowned for one of Japan's three greatest night views from Mount Hakodate, its historic Western-style buildings from the Meiji era, and its spectacular morning seafood market. A romantic, atmospheric city blending Japanese and foreign influences in a unique coastal setting.",
-  },
-  {
-    name: "Obihiro",
-    slug: "obihiro",
-    japaneseName: "帯広市",
-    image: "/cities/obihiro.webp",
-    description:
-      "Obihiro  is a city located in Tokachi Subprefecture, Hokkaidō, Japan. Within Midorigaoka Park, Hokkaidoritsu Obihiro Museum displays etchings and modern prints, many by regional artists. Nearby, Obihiro Zoo is home to polar bears and Japanese macaques. Along the Tokachi River, Tokachigawa Onsen has natural hot springs. North of the city, hot-air balloons rise above the waters of Lake Shikaribetsu and the surrounding forest. ",
-  },
-  {
-    name: "Kurashiki",
-    slug: "kurashiki",
-    japaneseName: "倉敷",
-    image: "/cities/kurashiki.webp",
-    description:
-      "Kurashiki is a charming historic city in Okayama Prefecture, famous for its beautifully preserved Bikan Historical Quarter with white-walled storehouses lining a willow-draped canal. Home to the renowned Ohara Museum of Art — Japan's first Western art museum — it perfectly blends traditional aesthetics with a sophisticated cultural scene.",
-  },
-  {
-    name: "Yoshino",
-    slug: "yoshino",
-    japaneseName: "吉野",
-    image: "/cities/yoshino.webp",
-    description:
-      "Yoshino is a sacred mountain town in Nara Prefecture and a UNESCO World Heritage Site, considered Japan's most celebrated cherry blossom destination with over 30,000 trees covering the mountainside. A place of deep spiritual significance in Japanese history and culture, it has been a pilgrimage site and imperial retreat for over a millennium.",
-  },
-  {
-    name: "Ito",
-    slug: "ito",
-    japaneseName: "伊東市",
-    image: "/cities/ito.webp",
-    description:
-      "Itō is a city on central Japan's Izu Peninsula. It's renowned for its hot-spring resorts. In the center, the grand Tokaikan is a 1920s ryokan inn that's now a museum. Ikeda Museum of 20th Century Art has modern European painting and sculpture. South, a chairlift climbs extinct volcano Mount Omuro, and a trail follows the Jogasaki Coast's jagged cliffs. Antique instruments can be heard at the Music Box Museum of Izu .",
-  },
-  {
-    name: "Atami",
-    slug: "atami",
-    japaneseName: "熱海",
-    image: "/cities/atami.webp",
-    description:
-      "Atami is a popular hot spring resort city on the Izu Peninsula overlooking Sagami Bay, easily accessible from Tokyo. Long favored as a romantic getaway, it offers abundant onsen ryokan, the MOA Museum of Art with its stunning coastal views, fresh seafood, and a lively retro atmosphere that has charmed Japanese visitors for generations.",
-  },
-  {
-    name: "Yakushima",
-    slug: "yakushima",
-    japaneseName: "屋久島",
-    image: "/cities/yakushima.webp",
-    description:
-      "Yakushima is a UNESCO World Heritage island off southern Kyushu, blanketed in ancient cedar forests including Jomon Sugi, a tree estimated to be between 2,000 and 7,000 years old. Said to have inspired the forest setting of Studio Ghibli's Princess Mononoke, this mystical island of mist, moss, and towering trees is unlike anywhere else on Earth.",
-  },
+    {
+        name: "Tokyo",
+        slug: "tokyo",
+        japaneseName: "東京",
+        image: "/cities/tokyo.webp",
+        island: "Honshu",
+        region: "Kanto",
+        description: "Tokyo is the capital of Japan and the world's most populous metropolis, seamlessly blending ultramodern skyscrapers, neon-lit streets, and cutting-edge technology with traditional temples, shrines, and gardens."
+    },
+    {
+        name: "Kyoto",
+        slug: "kyoto",
+        japaneseName: "京都",
+        image: "/cities/kyoto.webp",
+        island: "Honshu",
+        region: "Kansai",
+        description: "Kyoto is the country's cultural and historical heart, often called its spiritual home. Located in a mountain-ringed basin, the city is renowned for its 2,000+ temples and shrines, traditional wooden machiya houses, exquisite gardens, and refined, 1,200-year-old culture."
+    },
+    {
+        name: "Osaka",
+        slug: "osaka",
+        japaneseName: "大阪",
+        image: "/cities/osaka.webp",
+        island: "Honshu",
+        region: "Kansai",
+        description: "Osaka is Japan's third-largest city and a vibrant, culinary-focused metropolis in the Kansai region known as the Nation's Kitchen. Famed for its outgoing locals, neon-lit nightlife, and street food like takoyaki, Osaka offers a relaxed, modern alternative to Tokyo, featuring major landmarks like Osaka Castle and Dotonbori."
+    },
+    {
+        name: "Yokohama",
+        slug: "yokohama",
+        japaneseName: "横浜",
+        image: "/cities/yokohama.webp",
+        island: "Honshu",
+        region: "Kanto",
+        description: "Yokohama is Japan's second-largest city and a major, historically significant port located just south of Tokyo in Kanagawa Prefecture. Renowned for its international flair, scenic waterfront, and the futuristic Minato Mirai 21 district, it offers a more relaxed, modern alternative to Tokyo while functioning as a key commercial hub."
+    },
+    {
+        name: "Hiroshima",
+        slug: "hiroshima",
+        japaneseName: "広島",
+        image: "/cities/hiroshima.webp",
+        island: "Honshu",
+        region: "Chugoku",
+        description: "Hiroshima is a powerful symbol of peace and resilience, rebuilt after the devastating 1945 atomic bombing into a thriving modern city. Its iconic Peace Memorial Park and Museum stand as solemn reminders of the past, while the nearby island of Miyajima with its famous floating torii gate draws visitors from around the world."
+    },
+    {
+        name: "Nara",
+        slug: "nara",
+        japaneseName: "奈良",
+        image: "/cities/nara.webp",
+        island: "Honshu",
+        region: "Kansai",
+        description: "Nara is Japan's first permanent capital and a UNESCO World Heritage city, famous for its freely roaming sacred deer and monumental landmarks. Home to Todai-ji temple housing Japan's largest bronze Buddha, the vast Nara Park, and ancient Kasuga Taisha shrine."
+    },
+    {
+        name: "Hakone",
+        slug: "hakone",
+        japaneseName: "箱根",
+        image: "/cities/hakone.webp",
+        island: "Honshu",
+        region: "Kanto",
+        description: "Hakone is a renowned mountain resort town in Kanagawa Prefecture, celebrated for its spectacular views of Mount Fuji, natural hot springs, and serene landscapes. A classic escape from Tokyo, it offers ryokan stays, the scenic Lake Ashi, open-air museums, and traditional crafts."
+    },
+    {
+        name: "Nikko",
+        slug: "nikko",
+        japaneseName: "日光",
+        image: "/cities/nikko.webp",
+        island: "Honshu",
+        region: "Kanto",
+        description: "Nikko is a mountainous UNESCO World Heritage town north of Tokyo, famous for its extraordinarily ornate Tosho-gu shrine complex. Surrounded by dense cedar forests, dramatic waterfalls, and serene Lake Chuzenji, it offers a striking contrast between lavish historic architecture and pristine natural scenery."
+    },
+    {
+        name: "Okinawa",
+        slug: "okinawa",
+        japaneseName: "沖縄",
+        image: "/cities/okinawa.webp",
+        island: "Okinawa",
+        region: "Okinawa",
+        description: "Okinawa is Japan's southernmost prefecture, an archipelago of subtropical islands with a distinct Ryukyuan culture and history. Renowned for its crystal-clear turquoise waters, vibrant coral reefs, white sand beaches, unique cuisine, and the ancient Shuri Castle."
+    },
+    {
+        name: "Nagoya",
+        slug: "nagoya",
+        japaneseName: "名古屋市",
+        image: "/cities/nagoya.webp",
+        island: "Honshu",
+        region: "Chubu",
+        description: "Nagoya is Japan's fourth-largest city and a major industrial, historical, and transportation hub located in the center of Honshu. As the capital of Aichi Prefecture, it is famously the birthplace of the Toyota Motor Corporation and a center for manufacturing, including aerospace and ceramics."
+    },
+    {
+        name: "Sapporo",
+        slug: "sapporo",
+        japaneseName: "札幌市",
+        image: "/cities/sapporo.webp",
+        island: "Hokkaido",
+        region: "Hokkaido",
+        description: "Sapporo is the capital of Japan's northernmost island, Hokkaido, and the nation's 4th largest city. Known for its snowy winters, renowned beer, and rich ramen culture, it is a hub of nature and urban life. Famous for hosting the 1972 Winter Olympics and the annual Snow Festival."
+    },
+    {
+        name: "Fukuoka",
+        slug: "fukuoka",
+        japaneseName: "福岡市",
+        image: "/cities/fukuoka.webp",
+        island: "Kyushu",
+        region: "Kyushu",
+        description: "Fukuoka is a vibrant, fast-growing coastal city on Japan's Kyushu island, serving as a historic gateway to Asia. Renowned for its relaxed atmosphere, rich culinary scene (especially tonkotsu ramen), and historic Hakata district, it perfectly blends modern urban life with traditional charm."
+    },
+    {
+        name: "Kobe",
+        slug: "kobe",
+        japaneseName: "神戸",
+        image: "/cities/kobe.webp",
+        island: "Honshu",
+        region: "Kansai",
+        description: "Kobe is a sophisticated port city nestled between the Rokko mountains and Osaka Bay, long renowned for its cosmopolitan atmosphere and international influences. Famous worldwide for its premium Kobe beef, stylish Kitano district with Western-style residences, and vibrant Chinatown."
+    },
+    {
+        name: "Kamakura",
+        slug: "kamakura",
+        japaneseName: "鎌倉",
+        image: "/cities/kamakura.webp",
+        island: "Honshu",
+        region: "Kanto",
+        description: "Kamakura is a coastal city south of Tokyo that served as Japan's political center during the 12th to 14th centuries. Renowned for its Great Buddha, numerous Zen temples, and scenic hiking trails through forested hills, it offers a perfect blend of history, spirituality, and natural beauty."
+    },
+    {
+        name: "Kanazawa",
+        slug: "kanazawa",
+        japaneseName: "金沢",
+        image: "/cities/kanazawa.webp",
+        island: "Honshu",
+        region: "Chubu",
+        description: "Kanazawa is a beautifully preserved castle town on the Sea of Japan coast, often called Little Kyoto for its rich cultural heritage. Home to Kenroku-en, one of Japan's three great gardens, along with samurai and geisha districts and traditional crafts like Kutani porcelain and gold leaf."
+    },
+    {
+        name: "Nagasaki",
+        slug: "nagasaki",
+        japaneseName: "長崎",
+        image: "/cities/nagasaki.webp",
+        island: "Kyushu",
+        region: "Kyushu",
+        description: "Nagasaki is a hilly, atmospheric port city with a uniquely cosmopolitan history as Japan's main gateway to the outside world during its period of isolation. Carrying the profound legacy of the 1945 atomic bombing, it also boasts a rich blend of Dutch, Chinese, and Portuguese influences."
+    },
+    {
+        name: "Sendai",
+        slug: "sendai",
+        japaneseName: "仙台",
+        image: "/cities/sendai.webp",
+        island: "Honshu",
+        region: "Tohoku",
+        description: "Sendai is the largest city in the Tohoku region and a vibrant modern metropolis known as the City of Trees for its zelkova-lined boulevards. Gateway to Matsushima bay and the nearby Zao mountains, it blends urban energy with easy access to nature and rich samurai heritage."
+    },
+    {
+        name: "Matsuyama",
+        slug: "matsuyama",
+        japaneseName: "松山",
+        image: "/cities/matsuyama.webp",
+        island: "Shikoku",
+        region: "Shikoku",
+        description: "Matsuyama is the largest city on Shikoku island and home to one of Japan's finest original feudal castles. Famous for Dogo Onsen, one of the oldest hot spring bathhouses in Japan said to have inspired Studio Ghibli's Spirited Away, it exudes a relaxed, literary atmosphere."
+    },
+    {
+        name: "Takayama",
+        slug: "takayama",
+        japaneseName: "高山",
+        image: "/cities/takayama.webp",
+        island: "Honshu",
+        region: "Chubu",
+        description: "Takayama is a beautifully preserved Edo-period town nestled in the Japanese Alps of Gifu Prefecture. Its historic Sanmachi Suji merchant district, traditional sake breweries, vibrant morning markets, and proximity to the thatched-roof villages of Shirakawa-go make it one of Japan's most atmospheric destinations."
+    },
+    {
+        name: "Kumamoto",
+        slug: "kumamoto",
+        japaneseName: "熊本",
+        image: "/cities/kumamoto.webp",
+        island: "Kyushu",
+        region: "Kyushu",
+        description: "Kumamoto is a dynamic city on Kyushu island, home to one of Japan's most impressive feudal castles. Known for its spicy local cuisine, the beautiful Suizenji Jojuen garden, and as the gateway to the dramatic Aso volcanic caldera, it perfectly blends history and natural wonder."
+    },
+    {
+        name: "Tsushima",
+        slug: "tsushima",
+        japaneseName: "対馬",
+        image: "/cities/tsushima.webp",
+        island: "Kyushu",
+        region: "Kyushu",
+        description: "Tsushima is a remote, rugged island in the Korea Strait, known for its pristine nature, dense forests, and rich samurai history. Famous as the setting of the legendary Battle of Tsushima and the popular video game Ghost of Tsushima, the island offers untouched landscapes and ancient shrines."
+    },
+    {
+        name: "Nagano",
+        slug: "nagano",
+        japaneseName: "長野",
+        image: "/cities/nagano.webp",
+        island: "Honshu",
+        region: "Chubu",
+        description: "Nagano is a mountain city in central Honshu, renowned for hosting the 1998 Winter Olympics and as the gateway to the Japanese Alps. Famous for the snow monkeys of Jigokudani, the historic Zenko-ji temple, and world-class ski resorts like Hakuba and Shiga Kogen."
+    },
+    {
+        name: "Beppu",
+        slug: "beppu",
+        japaneseName: "別府",
+        image: "/cities/beppu.webp",
+        island: "Kyushu",
+        region: "Kyushu",
+        description: "Beppu is Japan's hot spring capital on the island of Kyushu, producing more geothermal water than anywhere else in the country except Yellowstone. Famous for its eight 'Hells' — spectacular boiling pools of vivid colors — and its abundant onsen bathhouses, it is an unmissable destination for hot spring lovers."
+    },
+    {
+        name: "Miyajima",
+        slug: "miyajima",
+        japaneseName: "宮島",
+        image: "/cities/miyajima.webp",
+        island: "Honshu",
+        region: "Chugoku",
+        description: "Miyajima is a sacred island near Hiroshima, considered one of Japan's three most scenic views. Famous for the iconic floating torii gate of Itsukushima Shrine — a UNESCO World Heritage Site — the island is also home to wild deer, a mountaintop cable car, and traditional momiji manju sweets."
+    },
+    {
+        name: "Kochi",
+        slug: "kochi",
+        japaneseName: "高知",
+        image: "/cities/kochi.webp",
+        island: "Shikoku",
+        region: "Shikoku",
+        description: "Kochi is the capital of Kochi Prefecture on Shikoku island, known for its original feudal castle, vibrant Sunday market, and free-spirited local culture. Gateway to Cape Ashizuri and the rugged Shimanto River, the city is renowned for its bonito fish cuisine, warm climate, and lively Yosakoi festival."
+    },
+    {
+        name: "Aomori",
+        slug: "aomori",
+        japaneseName: "青森",
+        image: "/cities/aomori.webp",
+        island: "Honshu",
+        region: "Tohoku",
+        description: "Aomori is the northernmost major city on Honshu, famous for its spectacular Nebuta Festival featuring enormous illuminated floats, and as the gateway to the sacred Mount Osore and the pristine Shirakami-Sanchi UNESCO forest. Known for Japan's finest apples and fresh seafood from its cold northern waters."
+    },
+    {
+        name: "Hirosaki",
+        slug: "hirosaki",
+        japaneseName: "弘前",
+        image: "/cities/hirosaki.webp",
+        island: "Honshu",
+        region: "Tohoku",
+        description: "Hirosaki is a historic castle town in Aomori Prefecture, celebrated as one of Japan's premier cherry blossom destinations each spring. Its well-preserved Hirosaki Castle surrounded by over 2,500 cherry trees, along with Western-style Meiji-era architecture, traditional Tsugaru culture, and the backdrop of Mount Iwaki make it uniquely charming."
+    },
+    {
+        name: "Matsumoto",
+        slug: "matsumoto",
+        japaneseName: "松本",
+        image: "/cities/matsumoto.webp",
+        island: "Honshu",
+        region: "Chubu",
+        description: "Matsumoto is a gateway city to the Japanese Alps in Nagano Prefecture, home to Matsumoto Castle, one of Japan's most beautiful and best-preserved original feudal castles with its striking black exterior. Surrounded by the Northern Alps, it offers world-class mountaineering, pristine nature, and a vibrant arts scene."
+    },
+    {
+        name: "Himeji",
+        slug: "himeji",
+        japaneseName: "姫路",
+        image: "/cities/himeji.webp",
+        island: "Honshu",
+        region: "Kansai",
+        description: "Himeji is home to Himeji Castle, widely considered Japan's most magnificent feudal castle and a UNESCO World Heritage Site. Known as the White Heron Castle for its brilliant white exterior, it survived both World War II and earthquakes intact, making it the finest surviving example of traditional Japanese castle architecture."
+    },
+    {
+        name: "Kagoshima",
+        slug: "kagoshima",
+        japaneseName: "鹿児島",
+        image: "/cities/kagoshima.webp",
+        island: "Kyushu",
+        region: "Kyushu",
+        description: "Kagoshima is a vibrant southern city on Kyushu island, dramatically dominated by the active Sakurajima volcano rising from the bay. Often called the Naples of the Eastern world for its bay setting and volcanic backdrop, it is famous for its samurai heritage, black pork cuisine, shochu distilleries, and proximity to Yakushima island."
+    },
+    {
+        name: "Nishinomiya",
+        slug: "nishinomiya",
+        japaneseName: "西宮市",
+        image: "/cities/nishinomiya.webp",
+        island: "Honshu",
+        region: "Kansai",
+        description: "Nishinomiya is a city located in Hyōgo Prefecture, Nishinomiya is an important commercial and shipping city in the Kansai region with the third largest population in Hyōgo Prefecture. Nishinomiya is best known as the home of Koshien Stadium, where the Hanshin Tigers baseball team plays home games and where Japan's annual high school baseball championship is held."
+    },
+    {
+        name: "Shirakawa-go",
+        slug: "shirakawa-go",
+        japaneseName: "白川郷",
+        image: "/cities/shirakawa-go.webp",
+        island: "Honshu",
+        region: "Chubu",
+        description: "Shirakawa-go is a UNESCO World Heritage mountainous village in Gifu Prefecture, famous for its extraordinary gasshō-zukuri farmhouses with steep thatched roofs designed to withstand heavy snowfall. Particularly magical in winter when blanketed in deep snow, the village offers an immersive glimpse into rural Japanese life preserved across centuries."
+    },
+    {
+        name: "Hakodate",
+        slug: "hakodate",
+        japaneseName: "函館",
+        image: "/cities/hakodate.webp",
+        island: "Hokkaido",
+        region: "Hokkaido",
+        description: "Hakodate is a port city at the southern tip of Hokkaido, renowned for one of Japan's three greatest night views from Mount Hakodate, its historic Western-style buildings from the Meiji era, and its spectacular morning seafood market. A romantic, atmospheric city blending Japanese and foreign influences in a unique coastal setting."
+    },
+    {
+        name: "Obihiro",
+        slug: "obihiro",
+        japaneseName: "帯広市",
+        image: "/cities/obihiro.webp",
+        island: "Hokkaido",
+        region: "Hokkaido",
+        description: "Obihiro is a city located in Tokachi Subprefecture, Hokkaidō, Japan. Within Midorigaoka Park, Hokkaidoritsu Obihiro Museum displays etchings and modern prints, many by regional artists. Nearby, Obihiro Zoo is home to polar bears and Japanese macaques. Along the Tokachi River, Tokachigawa Onsen has natural hot springs. North of the city, hot-air balloons rise above the waters of Lake Shikaribetsu and the surrounding forest."
+    },
+    {
+        name: "Kurashiki",
+        slug: "kurashiki",
+        japaneseName: "倉敷",
+        image: "/cities/kurashiki.webp",
+        island: "Honshu",
+        region: "Chugoku",
+        description: "Kurashiki is a charming historic city in Okayama Prefecture, famous for its beautifully preserved Bikan Historical Quarter with white-walled storehouses lining a willow-draped canal. Home to the renowned Ohara Museum of Art — Japan's first Western art museum — it perfectly blends traditional aesthetics with a sophisticated cultural scene."
+    },
+    {
+        name: "Yoshino",
+        slug: "yoshino",
+        japaneseName: "吉野",
+        image: "/cities/yoshino.webp",
+        island: "Honshu",
+        region: "Kansai",
+        description: "Yoshino is a sacred mountain town in Nara Prefecture and a UNESCO World Heritage Site, considered Japan's most celebrated cherry blossom destination with over 30,000 trees covering the mountainside. A place of deep spiritual significance in Japanese history and culture, it has been a pilgrimage site and imperial retreat for over a millennium."
+    },
+    {
+        name: "Ito",
+        slug: "ito",
+        japaneseName: "伊東市",
+        image: "/cities/ito.webp",
+        island: "Honshu",
+        region: "Kanto",
+        description: "Itō is a city on central Japan's Izu Peninsula. It's renowned for its hot-spring resorts. In the center, the grand Tokaikan is a 1920s ryokan inn that's now a museum. Ikeda Museum of 20th Century Art has modern European painting and sculpture. South, a chairlift climbs extinct volcano Mount Omuro, and a trail follows the Jogasaki Coast's jagged cliffs. Antique instruments can be heard at the Music Box Museum of Izu."
+    },
+    {
+        name: "Atami",
+        slug: "atami",
+        japaneseName: "熱海",
+        image: "/cities/atami.webp",
+        island: "Honshu",
+        region: "Kanto",
+        description: "Atami is a popular hot spring resort city on the Izu Peninsula overlooking Sagami Bay, easily accessible from Tokyo. Long favored as a romantic getaway, it offers abundant onsen ryokan, the MOA Museum of Art with its stunning coastal views, fresh seafood, and a lively retro atmosphere that has charmed Japanese visitors for generations."
+    },
+    {
+        name: "Yakushima",
+        slug: "yakushima",
+        japaneseName: "屋久島",
+        image: "/cities/yakushima.webp",
+        island: "Kyushu",
+        region: "Kyushu",
+        description: "Yakushima is a UNESCO World Heritage island off southern Kyushu, blanketed in ancient cedar forests including Jomon Sugi, a tree estimated to be between 2,000 and 7,000 years old. Said to have inspired the forest setting of Studio Ghibli's Princess Mononoke, this mystical island of mist, moss, and towering trees is unlike anywhere else on Earth."
+    },
 ];

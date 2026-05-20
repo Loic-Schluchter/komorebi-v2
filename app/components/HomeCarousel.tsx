@@ -3,6 +3,9 @@ import { cities } from "@/app/lib/cities";
 import { MoveRight } from "lucide-react";
 import Image from "next/image";
 import React, { useEffect, useRef, useCallback } from "react";
+import {useRouter} from "next/navigation";
+import {router} from "next/client";
+
 
 function HomeCarousel({ onActiveChange }: { onActiveChange: (index: number) => void }) {
   const maxItems = 10;
@@ -60,15 +63,18 @@ function HomeCarousel({ onActiveChange }: { onActiveChange: (index: number) => v
     };
   }, [findCenterCard]);
 
+      const router = useRouter();
   return (
+
     <>
-      <div className="py-4 flex justify-between items-center text-[0.8rem] uppercase tracking-wider noScrollbar">
+
+      <div className="py-4 flex justify-between items-center text-[0.8rem] uppercase tracking-wider">
         <h2 className="text-komorebi-gold text-[0.8rem] uppercase tracking-wider">Destinations · {cities.length}</h2>
-        <button className="font-serif italic flex items-center gap-2 text-lg">
+        <button className="font-serif italic flex items-center gap-2 text-lg" onClick={() => (router.push("/cities"))}>
           See all <MoveRight size={16} />
         </button>
       </div>
-      <ul className="flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-6 px-6 pb-8" ref={carouselRef}>
+      <ul className="flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-6 px-6 pb-8 noScrollbar" ref={carouselRef}>
         {cities.slice(0, maxItems).map((city, index) => (
           <li
             key={city.slug}

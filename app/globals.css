@@ -4,6 +4,7 @@
   --font-sans: var(--font-inter);
   --font-serif: var(--font-cormorant);
   --color-komorebi-gold: #C89858;
+  --color-komorebi-ivory: #D9CFB8;
   --gradient-komorebi-gold:
     linear-gradient(
       90deg,
@@ -25,11 +26,7 @@
   font-family: var(--font-shippori);
 }
 @utility noScrollbar {
-  &::-webkit-scrollbar {
-    display: none;
-  }
-  -ms-overflow-style: none;
-  scrollbar-width: none; 
+  @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
 }
 
 
