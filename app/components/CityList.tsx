@@ -1,29 +1,30 @@
+import CityCard from "@/app/components/CityCard"
+import {CityWithWeather} from "@/app/types/City"
 
-import CityCard from "@/app/components/CityCard";
-import {cities} from "@/app/lib/cities";
+interface CityListProps {
+    selectedIsland: string
+    selectedSort: string
+    citiesWithWeather: CityWithWeather[]
+}
 
-
-function CityList({selectedIsland, selectedSort}: { selectedIsland: string, selectedSort: string }) {
+function CityList({selectedIsland, selectedSort, citiesWithWeather}: CityListProps) {
 
     const filteredCities = selectedIsland === "All islands"
-        ? cities
-        : cities.filter(city => city.island === selectedIsland)
+        ? citiesWithWeather
+        : citiesWithWeather.filter(city => city.island === selectedIsland)
 
     const groupedCities = filteredCities.reduce((acc, city) => {
-        if (!acc[city.region]) {
-            acc[city.region] = []
-        }
+        if (!acc[city.region]) acc[city.region] = []
         acc[city.region].push(city)
         return acc
-    }, {} as Record<string, typeof cities>)
-
+    }, {} as Record<string, CityWithWeather[]>)
 
     return (
         <div className="w-full flex flex-col gap-2 mt-10 min-h-140">
             {selectedSort === "A-Z"
-                ? [...filteredCities].sort((a, b) => a.name.localeCompare(b.name)).map(city => (
-                    <CityCard key={city.slug} city={city} />
-                ))
+                ? [...filteredCities]
+                    .sort((a, b) => a.name.localeCompare(b.name))
+                    .map(city => <CityCard key={city.slug} city={city}/>)
                 : Object.entries(groupedCities).map(([region, cities], index) => (
                     <div key={region}>
                         <div className="flex justify-between items-center gap-2 mb-2">
@@ -32,9 +33,7 @@ function CityList({selectedIsland, selectedSort}: { selectedIsland: string, sele
                             <div className="w-full h-px bg-white/20"></div>
                             <p className="text-sm whitespace-nowrap uppercase text-[#d9cfb8]">{cities.length} cities</p>
                         </div>
-                        {cities.map(city => (
-                            <CityCard key={city.slug} city={city} />
-                        ))}
+                        {cities.map(city => <CityCard key={city.slug} city={city}/>)}
                     </div>
                 ))
             }

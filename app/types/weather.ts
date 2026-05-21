@@ -2,7 +2,7 @@
 
 
 export type OpenWeatherMapResponse = {
-  
+
   weather: [
     {
       main: string;
