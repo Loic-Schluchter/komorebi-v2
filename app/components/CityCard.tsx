@@ -1,10 +1,7 @@
 'use client'
 
-
-import {cities, City} from "@/app/lib/cities"
 import Image from "next/image";
 import {useRouter} from "next/navigation"
-import {OpenWeatherMapResponse} from "@/app/types/weather";
 import {CityWithWeather} from "@/app/types/City";
 
 interface CityCardProps {

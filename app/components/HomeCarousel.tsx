@@ -4,7 +4,6 @@ import { MoveRight } from "lucide-react";
 import Image from "next/image";
 import React, { useEffect, useRef, useCallback } from "react";
 import {useRouter} from "next/navigation";
-import {router} from "next/client";
 
 
 function HomeCarousel({ onActiveChange }: { onActiveChange: (index: number) => void }) {
@@ -64,6 +63,11 @@ function HomeCarousel({ onActiveChange }: { onActiveChange: (index: number) => v
   }, [findCenterCard]);
 
       const router = useRouter();
+
+      function handleClick(city : string) {
+        
+        router.push(`/cities/${city}`.toLowerCase());
+      }
   return (
 
     <>
@@ -87,7 +91,7 @@ function HomeCarousel({ onActiveChange }: { onActiveChange: (index: number) => v
               <p className="font-japanese text-2xl text-komorebi-gold">{city.japaneseName}</p>
               <h3 className="font-serif text-4xl italic">{city.name}</h3>
             </div>
-            <button className="absolute bottom-4 right-4 bg-[#B8392C] text-white p-2 rounded-full hover:opacity-90 transition-opacity">
+            <button className="absolute bottom-4 right-4 bg-[#B8392C] text-white p-2 rounded-full hover:opacity-90 transition-opacity" onClick={()=> handleClick(city.name)}>
               <MoveRight size={20} />
             </button>
           </li>

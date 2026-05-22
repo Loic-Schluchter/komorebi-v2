@@ -1,13 +1,14 @@
 "use client";
-import React, {useEffect} from "react";
+
 
 import HomeCarousel from "../components/HomeCarousel";
 import HomeInput from "../components/HomeInput";
 import MoodCard from "../components/MoodCard";
 import { cities } from "@/app/lib/cities";
+import {useState} from "react";
 
 function HomePage() {
-  const [activeIndex, setActiveIndex] = React.useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
   const activeCity = cities[activeIndex];
 
 

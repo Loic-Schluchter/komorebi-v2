@@ -10,7 +10,6 @@ import {CityWithWeather} from "@/app/types/City";
 interface CitiesClientProps{
     citiesWithWeather: CityWithWeather[]
 }
-
 function CitiesClient({citiesWithWeather}: CitiesClientProps) {
     const [selectedIsland, setSelectedIsland] = useState("All islands")
     const [selectedSort, setSelectedSort] = useState("Region")

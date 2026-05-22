@@ -109,16 +109,16 @@ export const cities: City[] = [
         description: "Nikko is a mountainous UNESCO World Heritage town north of Tokyo, famous for its extraordinarily ornate Tosho-gu shrine complex. Surrounded by dense cedar forests, dramatic waterfalls, and serene Lake Chuzenji, it offers a striking contrast between lavish historic architecture and pristine natural scenery."
     },
     {
-        name: "Okinawa",
-        slug: "okinawa",
-        japaneseName: "沖縄",
-        image: "/cities/okinawa.webp",
+        name: "Naha",
+        slug: "naha",
+        japaneseName: "那覇",
+        image: "/cities/naha.webp",
         island: "Okinawa",
         region: "Okinawa",
-        catchphrase: "Turquoise water so clear you can count the coral below.",
-        type: "Island Paradise",
-        bestMonths: ["MAY", "JUN", "OCT"],
-        description: "Okinawa is Japan's southernmost prefecture, an archipelago of subtropical islands with a distinct Ryukyuan culture and history. Renowned for its crystal-clear turquoise waters, vibrant coral reefs, white sand beaches, unique cuisine, and the ancient Shuri Castle."
+        catchphrase: "The scent of the sea drifts through Shuri's ancient stone gates.",
+        type: "Island Capital",
+        bestMonths: ["MAR", "APR", "MAY", "OCT", "NOV"],
+        description: "Naha is the capital of Okinawa Prefecture and the cultural heart of the former Ryukyu Kingdom. Known for Shuri Castle, vibrant Kokusai Street, and a unique blend of Japanese and Ryukyuan traditions, it serves as the gateway to Okinawa's subtropical islands."
     },
     {
         name: "Nagoya",
@@ -260,7 +260,7 @@ export const cities: City[] = [
         island: "Kyushu",
         region: "Kyushu",
         catchphrase: "Dense forest meets the sea at the edge of the known world.",
-        type: "Wild Island",
+        type: "Island City",
         bestMonths: ["MAY", "JUN", "SEP", "OCT"],
         description: "Tsushima is a remote, rugged island in the Korea Strait, known for its pristine nature, dense forests, and rich samurai history. Famous as the setting of the legendary Battle of Tsushima and the popular video game Ghost of Tsushima, the island offers untouched landscapes and ancient shrines."
     },
@@ -289,16 +289,16 @@ export const cities: City[] = [
         description: "Beppu is Japan's hot spring capital on the island of Kyushu, producing more geothermal water than anywhere else in the country except Yellowstone. Famous for its eight 'Hells' — spectacular boiling pools of vivid colors — and its abundant onsen bathhouses, it is an unmissable destination for hot spring lovers."
     },
     {
-        name: "Miyajima",
-        slug: "miyajima",
-        japaneseName: "宮島",
-        image: "/cities/miyajima.webp",
+        name: "Hatsukaichi",
+        slug: "hatsukaichi",
+        japaneseName: "廿日市",
+        image: "/cities/hatsukaichi.webp",
         island: "Honshu",
         region: "Chugoku",
-        catchphrase: "The floating torii gate emerges from still water at high tide.",
-        type: "Sacred Island",
+        catchphrase: "The floating torii emerges from the sea beneath sacred mountains.",
+        type: "Gateway City",
         bestMonths: ["MAR", "APR", "OCT", "NOV"],
-        description: "Miyajima is a sacred island near Hiroshima, considered one of Japan's three most scenic views. Famous for the iconic floating torii gate of Itsukushima Shrine — a UNESCO World Heritage Site — the island is also home to wild deer, a mountaintop cable car, and traditional momiji manju sweets."
+        description: "Hatsukaichi is a city in Hiroshima Prefecture best known as the gateway to Miyajima and the UNESCO-listed Itsukushima Shrine. Combining coastal scenery, historic temples, and access to sacred Mount Misen, it is one of western Japan's most iconic destinations."
     },
     {
         name: "Kochi",
@@ -385,9 +385,9 @@ export const cities: City[] = [
         description: "Nishinomiya is a city located in Hyogo Prefecture, an important commercial and shipping city in the Kansai region with the third largest population in Hyogo Prefecture. Nishinomiya is best known as the home of Koshien Stadium, where the Hanshin Tigers baseball team plays home games and where Japan's annual high school baseball championship is held."
     },
     {
-        name: "Shirakawa-go",
-        slug: "shirakawa-go",
-        japaneseName: "白川郷",
+        name: "Shirakawa",
+        slug: "shirakawa",
+        japaneseName: "白川村",
         image: "/cities/shirakawago.webp",
         island: "Honshu",
         region: "Chubu",
@@ -478,6 +478,6 @@ export const cities: City[] = [
         catchphrase: "Ancient cedar forest — some trees have stood for seven thousand years.",
         type: "Wild Forest",
         bestMonths: ["MAY", "JUN", "SEP", "OCT"],
-        description: "Yakushima is a UNESCO World Heritage island off southern Kyushu, blanketed in ancient cedar forests including Jomon Sugi, a tree estimated to be between 2,000 and 7,000 years old. Said to have inspired the forest setting of Studio Ghibli's Princess Mononoke, this mystical island of mist, moss, and towering trees is unlike anywhere else on Earth."
+        description: "Yakushima is a town in Kagoshima Prefecture encompassing the entire UNESCO World Heritage island of the same name. Renowned for its ancient cedar forests, dramatic mountains, waterfalls, and unique ecosystem, it is one of Japan's most extraordinary natural destinations."
     },
-];
+]

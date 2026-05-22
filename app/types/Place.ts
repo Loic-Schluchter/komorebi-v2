@@ -1,31 +1,21 @@
-
-
 export type Place = {
+    name: string
     displayName: {
         text: string
         languageCode: string
     }
-    "postalAddress": {
-        "regionCode": string,
-        "languageCode": string,
-        "postalCode": string,
-        "administrativeArea": string,
-        "addressLines": [
-            string
-        ]
-    }
-    rating: number,
-    "googleMapsLinks": {
-    "placeUri": string,
-
-}
-    userRatingCount:number
     formattedAddress: string
-    location: {
-        latitude: number
-        longitude: number
-    }
+    rating: number
     photos: {
         name: string
     }[]
+    addressComponents?: {
+        longText: string
+        types: string[]
+    }[]
+
+}
+
+export type PlacesResponse = {
+    places: Place[]
 }

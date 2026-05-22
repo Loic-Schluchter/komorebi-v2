@@ -29,9 +29,8 @@ async function Cities() {
                 </div>
             </div>
             <p className="font-serif p-4 mb-2 italic text-[1.1rem] text-[#d9cfb8]">Sixteen places chosen carefully -
-                five islands, ten regions. each one with a season when it's at its best.</p>
+                five islands, ten regions. each one with a season when its at its best.</p>
             <CitiesClient citiesWithWeather={citiesWithWeather}/>
-
         </div>
     )
 }
