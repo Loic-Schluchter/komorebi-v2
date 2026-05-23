@@ -9,7 +9,7 @@ export async function getPlaces(city: string) {
             headers: {
                 "Content-Type": "application/json",
                 "X-Goog-Api-Key": API_KEY!,
-                "X-Goog-FieldMask": "places.displayName,places.formattedAddress,places.rating,places.photos,places.addressComponents"
+                "X-Goog-FieldMask": "places.displayName,places.formattedAddress,places.rating,places.photos,places.addressComponents,places.location"
             },
             body: JSON.stringify({
                 textQuery: `things to do in ${city}`
