@@ -1,5 +1,5 @@
 'use client'
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useState} from "react";
 export function useGeolocation() {
     const [location, setLocation] = useState<{lat: number, lng: number} | null>(null)
 

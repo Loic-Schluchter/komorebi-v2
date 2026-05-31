@@ -10,7 +10,7 @@ async function ThingsToDo({ city }: { city: string }) {
     const places: PlacesResponse = await getPlaces(city)
     if (!places) return null
 
-    const API_KEY = process.env.GOOGLE_PLACES_API_KEY
+    const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY
 
     const enrichedPlaces = places.places.map(place => ({
         ...place,
@@ -18,7 +18,6 @@ async function ThingsToDo({ city }: { city: string }) {
             ? `https://places.googleapis.com/v1/${place.photos[0].name}/media?maxWidthPx=400&key=${API_KEY}`
             : null
     }))
-
     return (
         <div>
             <div className="flex justify-between items-center my-6">

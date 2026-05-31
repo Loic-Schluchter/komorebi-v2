@@ -5,13 +5,17 @@ import { useGeolocation } from "@/app/hooks/geoLocalisation"
 import { calculateDistance } from "@/app/lib/distance"
 import { Star } from "lucide-react"
 import Image from "next/image"
+import {useRouter} from "next/navigation";
+import {slugify} from "@/app/lib/slugify";
+
 
 export function PlacesList({ places }: { places: Place[] }) {
     const location = useGeolocation()
-
+    const router = useRouter()
     return (
         <div>
             {places.map((place, index) => {
+
                 const neighborhood = place.addressComponents?.find(
                     c => c.types?.includes("sublocality_level_1")
                 )?.longText || place.addressComponents?.find(
@@ -21,17 +25,22 @@ export function PlacesList({ places }: { places: Place[] }) {
                 const distance = location && place.location
                     ? calculateDistance(location.lat, location.lng, place.location.latitude, place.location.longitude).toFixed(1)
                     : null
-                
+                const placeName = place.displayName.text
+                const placeSlug = slugify(placeName)
+                const latitude = place.location?.latitude
+                const longitude = place.location?.longitude
                 return (
                     <div key={index} className="flex gap-6 my-4">
                         {place.photoUrl && (
-                            <Image
-                                src={place.photoUrl}
-                                alt={place.displayName.text}
-                                width={80}
-                                height={80}
-                                className="w-20 h-20 object-cover rounded-2xl"
-                            />
+                            <button onClick={() => router.push(`/place/${placeSlug}?lat=${latitude}&lng=${longitude}&name=${encodeURIComponent(placeName)}`)}>
+                                <Image
+                                    src={place.photoUrl}
+                                    alt={place.displayName.text}
+                                    width={80}
+                                    height={80}
+                                    className="w-20 h-20 object-cover rounded-2xl"
+                                />
+                            </button>
                         )}
                         <div className="flex flex-col">
                             <p className="text-komorebi-gold">{neighborhood} <span className="text-[0.7rem]">{distance && `· ${distance} km`}</span> </p>
@@ -39,7 +48,7 @@ export function PlacesList({ places }: { places: Place[] }) {
                             <div className="flex gap-2 text-sm items-center text-komorebi-gold">
                                 <Star size={10} color={"yellow"} fill={"yellow"}/>
                                 <p>{place.rating}</p>
-                                
+
                             </div>
                         </div>
                     </div>

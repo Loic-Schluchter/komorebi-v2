@@ -1,7 +1,7 @@
 const googleURL = "https://places.googleapis.com/v1/places:searchText"
 
 export async function getPlaces(city: string) {
-    const API_KEY = process.env.GOOGLE_PLACES_API_KEY
+    const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY
 
     const response = await fetch(googleURL,
         {
@@ -23,4 +23,4 @@ export async function getPlaces(city: string) {
 }
 
 export const getPhotoUrl = (photoName: string) =>
-    `https://places.googleapis.com/v1/${photoName}/media?maxWidthPx=400&key=${process.env.GOOGLE_PLACES_API_KEY}`
+    `https://places.googleapis.com/v1/${photoName}/media?maxWidthPx=400&key=${process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY}`
