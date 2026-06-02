@@ -1,3 +1,4 @@
+'use client'
 import {cities} from "@/app/lib/cities";
 
 

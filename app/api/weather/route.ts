@@ -9,7 +9,7 @@ export async function GET(request: Request) {
     if (!city) {
         return Response.json({ error: "City parameter is required" }, { status: 400 });
     }
-    const API_KEY = process.env.VISUAL_CROSSING_API_KEY;
+    const API_KEY = process.env.OPEN_WEATHER_API_KEY;
     if (!API_KEY) {
         return Response.json({ error: "Missing API key" }, { status: 500 });
     }

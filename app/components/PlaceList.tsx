@@ -29,10 +29,15 @@ export function PlacesList({ places }: { places: Place[] }) {
                 const placeSlug = slugify(placeName)
                 const latitude = place.location?.latitude
                 const longitude = place.location?.longitude
+                console.log(place)
                 return (
                     <div key={index} className="flex gap-6 my-4">
                         {place.photoUrl && (
-                            <button onClick={() => router.push(`/place/${placeSlug}?lat=${latitude}&lng=${longitude}&name=${encodeURIComponent(placeName)}`)}>
+
+                            <button onClick={() => {
+                                if (!latitude || !longitude) return
+                                router.push(`/place/${placeSlug}?lat=${latitude}&lng=${longitude}&placeId=${encodeURIComponent(place.name ?? '')}`)
+                            }}>
                                 <Image
                                     src={place.photoUrl}
                                     alt={place.displayName.text}

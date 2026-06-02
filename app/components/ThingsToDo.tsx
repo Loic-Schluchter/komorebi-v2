@@ -10,7 +10,7 @@ async function ThingsToDo({ city }: { city: string }) {
     const places: PlacesResponse = await getPlaces(city)
     if (!places) return null
 
-    const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY
+    const API_KEY = process.env.GOOGLE_PLACES_API_KEY
 
     const enrichedPlaces = places.places.map(place => ({
         ...place,

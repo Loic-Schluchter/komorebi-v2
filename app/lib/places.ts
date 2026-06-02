@@ -1,7 +1,7 @@
 const googleURL = "https://places.googleapis.com/v1/places:searchText"
 
 export async function getPlaces(city: string) {
-    const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY
+    const API_KEY = process.env.GOOGLE_PLACES_API_KEY
 
     const response = await fetch(googleURL,
         {
@@ -9,7 +9,7 @@ export async function getPlaces(city: string) {
             headers: {
                 "Content-Type": "application/json",
                 "X-Goog-Api-Key": API_KEY!,
-                "X-Goog-FieldMask": "places.displayName,places.formattedAddress,places.rating,places.photos,places.addressComponents,places.location"
+                "X-Goog-FieldMask": "places.name,places.displayName,places.formattedAddress,places.rating,places.photos,places.addressComponents,places.location"
             },
             body: JSON.stringify({
                 textQuery: `things to do in ${city}`
@@ -22,5 +22,23 @@ export async function getPlaces(city: string) {
     return response.json()
 }
 
-export const getPhotoUrl = (photoName: string) =>
-    `https://places.googleapis.com/v1/${photoName}/media?maxWidthPx=400&key=${process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY}`
+export async function getPlaceDetails(placeId: string) {
+    const API_KEY = process.env.GOOGLE_PLACES_API_KEY
+
+    const response = await fetch(
+        `https://places.googleapis.com/v1/${placeId}`,
+        {
+            headers: {
+                "X-Goog-Api-Key": API_KEY!,
+                "X-Goog-FieldMask": "displayName,rating,currentOpeningHours,editorialSummary,priceLevel,photos,allowsDogs"
+            }
+        }
+    )
+
+    console.log("Status:", response.status)
+    console.log("PlaceId:", placeId)
+
+    if (!response.ok) return null
+    return response.json()
+}
+

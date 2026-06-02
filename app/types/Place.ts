@@ -4,6 +4,7 @@ export type Place = {
         text: string; 
         languageCode?: string 
     }
+
     formattedAddress?: string
     rating?: number
     photos?: { 
@@ -26,6 +27,20 @@ export type Place = {
         latitude: number
         longitude: number
     }
+
+
+}
+
+export type PlaceDetails = Place & {
+    currentOpeningHours: {
+        nextCloseTime?: string;
+        openNow: boolean;
+    },
+    editorialSummary:{
+        text:string
+    }
+    priceLevel: string
+    allowsDogs: boolean
 }
 
 export type PlacesResponse = {
