@@ -9,7 +9,7 @@ export async function getPlaces(city: string) {
             headers: {
                 "Content-Type": "application/json",
                 "X-Goog-Api-Key": API_KEY!,
-                "X-Goog-FieldMask": "places.name,places.displayName,places.formattedAddress,places.rating,places.photos,places.addressComponents,places.location"
+                "X-Goog-FieldMask": "places.name,places.displayName,places.formattedAddress,places.rating,places.photos,places.addressComponents,places.location, place.regularOpeningHours"
             },
             body: JSON.stringify({
                 textQuery: `things to do in ${city}`
@@ -30,7 +30,7 @@ export async function getPlaceDetails(placeId: string) {
         {
             headers: {
                 "X-Goog-Api-Key": API_KEY!,
-                "X-Goog-FieldMask": "displayName,rating,currentOpeningHours,editorialSummary,priceLevel,photos,allowsDogs"
+                "X-Goog-FieldMask": "displayName,regularOpeningHours,rating,currentOpeningHours,editorialSummary,priceLevel,photos,allowsDogs "
             }
         }
     )

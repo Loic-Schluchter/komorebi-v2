@@ -32,15 +32,22 @@ export type Place = {
 }
 
 export type PlaceDetails = Place & {
-    currentOpeningHours: {
-        nextCloseTime?: string;
-        openNow: boolean;
-    },
-    editorialSummary:{
-        text:string
+    currentOpeningHours?: {
+        nextCloseTime?: string
+        openNow: boolean
+        periods: {
+            openTime: string
+            closeTime: string
+        }[]
     }
-    priceLevel: string
-    allowsDogs: boolean
+    regularOpeningHours: {
+        weekdayDescriptions: string[]
+    }
+    editorialSummary?: {
+        text: string
+    }
+    priceLevel?: string
+    allowsDogs?: boolean
 }
 
 export type PlacesResponse = {
