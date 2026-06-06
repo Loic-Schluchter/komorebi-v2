@@ -1,7 +1,7 @@
 import PlaceMap from "@/app/components/PlaceMap";
 import {getPlaceDetails} from "@/app/lib/places";
 import PhotoCarousel from "@/app/components/PhotoCarousel";
-import {CircleChevronDown, Star} from "lucide-react";
+import { Star} from "lucide-react";
 import {PlaceDetails} from "@/app/types/Place";
 import BackButton from "@/app/components/BackButton";
 import HoursPlace from "@/app/components/HoursPlace";

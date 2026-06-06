@@ -1,4 +1,4 @@
-import { getPlaces} from "@/app/lib/places";
+import {getPlaces} from "@/app/lib/places";
 import {PlacesResponse} from "@/app/types/Place";
 
 import FilterButton from "@/app/components/FilterButton";
@@ -6,8 +6,9 @@ import FilterButton from "@/app/components/FilterButton";
 import {PlacesList} from "@/app/components/PlaceList";
 
 
-async function ThingsToDo({ city }: { city: string }) {
+async function ThingsToDo({city}: { city: string }) {
     const places: PlacesResponse = await getPlaces(city)
+    console.log("Places:", places)
     if (!places) return null
 
     const API_KEY = process.env.GOOGLE_PLACES_API_KEY
@@ -24,7 +25,7 @@ async function ThingsToDo({ city }: { city: string }) {
                 <h2 className="text-3xl font-serif font-bold italic">Things to do</h2>
                 <FilterButton/>
             </div>
-            <PlacesList places={enrichedPlaces} />
+            <PlacesList places={enrichedPlaces}/>
         </div>
     )
 }
