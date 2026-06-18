@@ -2,6 +2,7 @@
     name:string;
      kanji: string;
      kanjiMeaning: string;
+     slugName?: string;
      image:string;
     description:string;
     numberOfTown: number;
@@ -33,7 +34,7 @@ const themes: Theme[] = [
         numberOfTown: 3
     },
     {
-        name: "Hot springs",
+        name: "HotSprings",
         kanji: "湯",
         kanjiMeaning:"Onsen",
         image: "theme/hotSpring.webp",
@@ -49,7 +50,8 @@ const themes: Theme[] = [
         numberOfTown: 4
     },
     {
-        name: "Coast & islands",
+        name: "Coast",
+        slugName: "Coast & Island",
         kanji: "海",
         kanjiMeaning:"Umi",
         image: "theme/coast.webp",
