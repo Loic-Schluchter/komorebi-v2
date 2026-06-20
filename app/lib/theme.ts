@@ -4,7 +4,7 @@ type ThemeInfo = {
     value: string;
 };
 
-type Theme  = {
+export type Theme  = {
     name:string;
      kanji: string;
      kanjiMeaning: string;
@@ -27,7 +27,7 @@ const themes: Theme[] = [
         image: "theme/food.webp",
         description: "Markets, counters, kitchen",
         title: "Eat where the locals queue",
-        longDescription: "Japan rewards the hungry traveller — from a tamagoyaki stall older than your grandmother to a three-seat counter where the chef decides your meal. Come with an empty stomach and a little patience.",
+        longDescription: "Japan rewards the hungry traveller, from a tamagoyaki stall older than your grandmother to a three-seat counter where the chef decides your meal. Come with an empty stomach and a little patience.",
         numberOfTown: 1,
         infos: [
             {
@@ -63,7 +63,7 @@ const themes: Theme[] = [
         image: "theme/culture.webp",
         description: "Temples, shrines, craft",
         title: "A thousand years, still kept by hand.",
-        longDescription: "The old capitals hold their rituals lightly — gold-leaf workshops, ten thousand torii, monks raking gravel before dawn. Move slowly and the layers reveal themselves.",
+        longDescription: "The old capitals hold their rituals lightly, gold-leaf workshops, ten thousand torii, monks raking gravel before dawn. Move slowly and the layers reveal themselves.",
         numberOfTown: 2,
         infos: [
             {
