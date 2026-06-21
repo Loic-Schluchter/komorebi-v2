@@ -2,13 +2,14 @@ import CityCard from "@/app/components/CityCard"
 import {CityWithWeather} from "@/app/types/City"
 
 interface CityListProps {
-    selectedIsland: string
-    selectedSort: string
-    citiesWithWeather: CityWithWeather[]
+    selectedIsland?: string
+    selectedSort?: string
+    citiesWithWeather?: CityWithWeather[],
 }
 
 function CityList({selectedIsland, selectedSort, citiesWithWeather}: CityListProps) {
 
+    if (!selectedIsland || !citiesWithWeather) return null
     const filteredCities = selectedIsland === "All islands"
         ? citiesWithWeather
         : citiesWithWeather.filter(city => city.island === selectedIsland)
