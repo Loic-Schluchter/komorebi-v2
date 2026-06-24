@@ -3,6 +3,8 @@ import theme from "@/app/lib/theme";
 import BackButton from "@/app/components/BackButton";
 import ThemeBox from "@/app/components/ThemeBox";
 import ThemeQuotes from "@/app/components/ThemeQuotes";
+import CityList from "@/app/components/CityList";
+import ThemedCityList from "@/app/components/ThemedCityList";
 
 async function Page({params}: { params: Promise<{ id: string }> }) {
     const {id} = await params
@@ -14,7 +16,7 @@ async function Page({params}: { params: Promise<{ id: string }> }) {
                 <BackButton size={24}/>
                 <p className="font-sans uppercase"><span className="font-japanese">テーマ</span> · Theme 1 of 6</p>
             </div>
-            <div className=" flex flex-col w-full  bg-linear-to-b from-[#8F1D21] from-10% to-[#0f1a14] to-90% rounded-2xl p-4 pb-20 ">
+            <div className=" flex flex-col w-full rounded-2xl bg-linear-to-b from-[#8F1D21] from-10% to-[#0f1a14] to-90%  p-4 pb-20 " >
                 <p className="self-end text-6xl font-japanese text-komorebi-gold">{filtredTheme.kanji}</p>
                 <div className="mt-20">
                     <p className="text-komorebi-gold font-serif text-2xl">{filtredTheme.kanjiMeaning}</p>
@@ -31,6 +33,7 @@ async function Page({params}: { params: Promise<{ id: string }> }) {
             </section>
             <ThemeBox filtredTheme={filtredTheme}/>
             <ThemeQuotes filtredTheme={filtredTheme}/>
+            <ThemedCityList theme={filtredTheme.name}/>
         </div>
     )
 }

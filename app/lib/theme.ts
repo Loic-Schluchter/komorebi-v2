@@ -16,7 +16,6 @@ export type Theme  = {
     numberOfTown: number;
     infos: ThemeInfo[];
     hints: string[],
-    
 }
 
 const themes: Theme[] = [
