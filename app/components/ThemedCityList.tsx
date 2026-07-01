@@ -24,17 +24,23 @@ async function ThemedCityList({theme}: {theme: string}) {
         ...city,
         weather: weatherData[index]
     }))
-
     return (
-        <div className="w-full flex flex-col gap-2 mt-10 min-h-140">
-            <h2>Cities we recommend</h2>
-            {citiesWithWeather.map((city, i) => (
-                <div key={i}>
-                    <CityCard city={city}/>
+        <section>
+            <div className="w-full flex flex-col gap-2  min-h-140">
+                <div className="flex font-serif items-baseline gap-4 text-komorebi-ivory">
+                    <p className="text-komorebi-gold italic text-2xl">03</p>
+                    <h2 className="text-2xl italic">Cities we recommend</h2>
                 </div>
 
-            ))}
-        </div>
+                {citiesWithWeather.map((city, i) => (
+                    <div key={i}>
+                        <CityCard city={city}/>
+                    </div>
+
+                ))}
+            </div>
+        </section>
+
         )
 
 }

@@ -3,8 +3,8 @@ import theme from "@/app/lib/theme";
 import BackButton from "@/app/components/BackButton";
 import ThemeBox from "@/app/components/ThemeBox";
 import ThemeQuotes from "@/app/components/ThemeQuotes";
-import CityList from "@/app/components/CityList";
 import ThemedCityList from "@/app/components/ThemedCityList";
+
 
 async function Page({params}: { params: Promise<{ id: string }> }) {
     const {id} = await params
@@ -14,7 +14,7 @@ async function Page({params}: { params: Promise<{ id: string }> }) {
         <div className="w-full p-6 bg-[#0f1a14]">
             <div className="flex  items-center mb-4 gap-20">
                 <BackButton size={24}/>
-                <p className="font-sans uppercase"><span className="font-japanese">テーマ</span> · Theme 1 of 6</p>
+                <p className="font-sans uppercase text-komorebi-ivory"><span className="font-japanese ">テーマ</span> · Theme 1 of 6</p>
             </div>
             <div className=" flex flex-col w-full rounded-2xl bg-linear-to-b from-[#8F1D21] from-10% to-[#0f1a14] to-90%  p-4 pb-20 " >
                 <p className="self-end text-6xl font-japanese text-komorebi-gold">{filtredTheme.kanji}</p>
@@ -26,14 +26,17 @@ async function Page({params}: { params: Promise<{ id: string }> }) {
                     </p>
                 </div>
             </div>
-            <section className="mt-10 font-serif italic flex flex-col gap-4 mb-10">
+            <section className=" font-serif italic flex flex-col gap-4 mb-10">
                 <div className="flex-1 border-t border-komorebi-gold/30" />
                 <h2 className="text-komorebi-ivory text-2xl ">{filtredTheme.title}</h2>
                 <p className="text-komorebi-gold/40 w-80 text-xl">{filtredTheme.longDescription}</p>
             </section>
-            <ThemeBox filtredTheme={filtredTheme}/>
-            <ThemeQuotes filtredTheme={filtredTheme}/>
-            <ThemedCityList theme={filtredTheme.name}/>
+            <section className="flex flex-col gap-10">
+                <ThemeBox filtredTheme={filtredTheme}/>
+                <ThemeQuotes filtredTheme={filtredTheme}/>
+                <ThemedCityList theme={filtredTheme.name}/>
+            </section>
+
         </div>
     )
 }
