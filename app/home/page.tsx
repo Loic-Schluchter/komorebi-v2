@@ -6,6 +6,7 @@ import HomeInput from "../components/HomeInput";
 import MoodCard from "../components/MoodCard";
 import { cities } from "@/app/lib/cities";
 import {useState} from "react";
+import ThemeSection from "@/app/components/ThemeSection";
 
 function HomePage() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -17,6 +18,7 @@ function HomePage() {
       <HomeInput />
       <HomeCarousel onActiveChange={setActiveIndex} />
       <MoodCard location={activeCity.name} />
+      <ThemeSection/>
     </main>
   );
 }
