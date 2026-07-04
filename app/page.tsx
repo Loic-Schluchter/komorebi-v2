@@ -1,5 +1,5 @@
-import KomorebiBackground from "./components/KomorebiBackground";
-import WelcomeFooter from "./components/WelcomeFooter";
+import KomorebiBackground from "./components/ui/KomorebiBackground";
+import WelcomeFooter from "./components/ui/WelcomeFooter";
 
 export default function Home() {
  

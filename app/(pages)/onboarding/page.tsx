@@ -1,11 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import Button from "../components/Button";
+import Button from "../../components/ui/Button";
 import { Dot } from "lucide-react";
 import Image from "next/image";
 import { motion } from "motion/react";
-import ProgressionBar from "../components/ProgressionBar";
+import ProgressionBar from "../../components/ui/ProgressionBar";
 
 type Step = {
   kanji: string;

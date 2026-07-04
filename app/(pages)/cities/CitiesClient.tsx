@@ -1,8 +1,8 @@
 'use client'
 
-import CityList from "@/app/components/CityList";
-import SortNav from "@/app/components/SortNav";
-import IslandNav from "@/app/components/IslandNav";
+import CityList from "@/app/components/city/CityList";
+import SortNav from "@/app/components/layout/SortNav";
+import IslandNav from "@/app/components/layout/IslandNav";
 import {useState} from "react";
 import {CityWithWeather} from "@/app/types/City";
 

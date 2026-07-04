@@ -1,5 +1,5 @@
 import {cities} from "@/app/lib/cities";
-import CityCard from "@/app/components/CityCard";
+import CityCard from "@/app/components/city/CityCard";
 import {getWeather} from "@/app/lib/weather";
 
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import ThemeCard from "@/app/components/ThemeCard";
+import ThemeCard from "@/app/components/theme/ThemeCard";
 
 function ThemeSection() {
     return (

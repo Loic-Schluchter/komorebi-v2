@@ -1,4 +1,4 @@
-import CityCard from "@/app/components/CityCard"
+import CityCard from "@/app/components/city/CityCard"
 import {CityWithWeather} from "@/app/types/City"
 
 interface CityListProps {

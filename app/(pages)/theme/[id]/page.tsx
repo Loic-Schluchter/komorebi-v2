@@ -1,9 +1,9 @@
 import React from 'react'
 import theme from "@/app/lib/theme";
-import BackButton from "@/app/components/BackButton";
-import ThemeBox from "@/app/components/ThemeBox";
-import ThemeQuotes from "@/app/components/ThemeQuotes";
-import ThemedCityList from "@/app/components/ThemedCityList";
+import BackButton from "@/app/components/ui/BackButton";
+import ThemeBox from "@/app/components/theme/ThemeBox";
+import ThemeQuotes from "@/app/components/theme/ThemeQuotes";
+import ThemedCityList from "@/app/components/theme/ThemedCityList";
 
 
 async function Page({params}: { params: Promise<{ id: string }> }) {

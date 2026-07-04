@@ -7,7 +7,7 @@ export type Place = {
 
     formattedAddress?: string
     rating?: number
-    photos?: { 
+    photos: {
         name: string;
         widthPx?: number;
         heightPx?: number;
@@ -43,7 +43,7 @@ export type PlaceDetails = Place & {
     regularOpeningHours: {
         weekdayDescriptions: string[]
     }
-    editorialSummary?: {
+    editorialSummary: {
         text: string
     }
     priceLevel?: string

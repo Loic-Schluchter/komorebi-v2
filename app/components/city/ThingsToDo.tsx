@@ -1,9 +1,9 @@
 import {getPlaces} from "@/app/lib/places";
 import {PlacesResponse} from "@/app/types/Place";
 
-import FilterButton from "@/app/components/FilterButton";
+import FilterButton from "@/app/components/ui/FilterButton";
 
-import {PlacesList} from "@/app/components/PlaceList";
+import {PlacesList} from "@/app/components/city/PlaceList";
 
 
 async function ThingsToDo({city}: { city: string }) {
@@ -12,7 +12,6 @@ async function ThingsToDo({city}: { city: string }) {
     if (!places) return null
 
     const API_KEY = process.env.GOOGLE_PLACES_API_KEY
-
     const enrichedPlaces = places.places.map(place => ({
         ...place,
         photoUrl: place.photos?.[0]

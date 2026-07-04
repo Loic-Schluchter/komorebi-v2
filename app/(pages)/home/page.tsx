@@ -1,12 +1,12 @@
 "use client";
 
 
-import HomeCarousel from "../components/HomeCarousel";
-import HomeInput from "../components/HomeInput";
-import MoodCard from "../components/MoodCard";
+import HomeCarousel from "../../components/home/HomeCarousel";
+import HomeInput from "../../components/home/HomeInput";
+import MoodCard from "../../components/home/MoodCard";
 import { cities } from "@/app/lib/cities";
 import {useState} from "react";
-import ThemeSection from "@/app/components/ThemeSection";
+import ThemeSection from "@/app/components/theme/ThemeSection";
 
 function HomePage() {
   const [activeIndex, setActiveIndex] = useState(0);

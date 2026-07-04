@@ -2,7 +2,7 @@
 
 import { moodPrompts } from "@/app/lib/mood-prompts";
 import React, { useEffect, useState } from "react";
-import SunsetBar from "./SunsetBar";
+import SunsetBar from "../ui/SunsetBar";
 
 export type CityWeather = {
   conditions: string;

@@ -1,9 +1,9 @@
 import {cities} from "@/app/lib/cities";
-import BackButton from "@/app/components/BackButton";
-import MoodCard from "@/app/components/MoodCard";
+import BackButton from "@/app/components/ui/BackButton";
+import MoodCard from "@/app/components/home/MoodCard";
 
-import MeteoCard from "@/app/components/MeteoCard";
-import ThingsToDo from "@/app/components/ThingsToDo";
+import MeteoCard from "@/app/components/ui/MeteoCard";
+import ThingsToDo from "@/app/components/city/ThingsToDo";
 
 export default async function Page({params}: { params: Promise<{ id: string }> }) {
     const {id} = await params

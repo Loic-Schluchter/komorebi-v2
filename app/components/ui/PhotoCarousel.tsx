@@ -17,7 +17,7 @@ function PhotoCarousel({ photoUrls }: { photoUrls: string[] }) {
             >
                 {photoUrls.map((url, index) => (
                     <li key={index} className="snap-center shrink-0 relative w-full h-100  overflow-hidden">
-                        <Image src={url} alt="photo" fill className="object-cover" />
+                        <Image src={url} alt="photo" fill className="object-cover" priority/>
                     </li>
                 ))}
             </ul>

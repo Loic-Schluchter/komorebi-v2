@@ -1,9 +1,9 @@
 import {cities} from "@/app/lib/cities";
-import CitiesClient from "@/app/cities/CitiesClient";
-import BackButton from "@/app/components/BackButton";
+import CitiesClient from "@/app/(pages)/cities/CitiesClient";
+import BackButton from "@/app/components/ui/BackButton";
 import {getWeather} from "@/app/lib/weather";
-
 async function Cities() {
+
 
     const weatherData = await Promise.all(
         cities.map(city => getWeather(city.name))
@@ -14,9 +14,10 @@ async function Cities() {
     }))
 
     return (
+
         <div className="w-full flex flex-col  items-center justify-between px-4 bg-[#0F1A14] min-h-svh ">
             <div className="flex items-center gap-4 w-full mt-10 ">
-                <BackButton></BackButton>
+                <BackButton/>
                 <div className="flex flex-col text-komorebi-gold">
                     <p><span className="font-japanese">都市</span> · <span>Toshi</span></p>
                     <h1 className="text-4xl  text-[#d9cfb8] font-serif italic">All destinations</h1>
