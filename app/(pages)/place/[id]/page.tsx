@@ -5,7 +5,6 @@ import DataFetcher from "@/app/components/place/DataFetcher";
 import PlaceStats from "@/app/components/place/PlaceStats";
 import PlaceHeader from "@/app/components/place/PlaceHeader";
 
-
 export async function Page({
     params,
     searchParams

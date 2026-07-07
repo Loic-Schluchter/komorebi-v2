@@ -14,8 +14,7 @@ async function Cities() {
     }))
 
     return (
-
-        <div className="w-full flex flex-col  items-center justify-between px-4 bg-[#0F1A14] min-h-svh ">
+        <section className="w-full flex flex-col  items-center justify-between px-4 bg-[#0F1A14] min-h-svh ">
             <div className="flex items-center gap-4 w-full mt-10 ">
                 <BackButton/>
                 <div className="flex flex-col text-komorebi-gold">
@@ -32,7 +31,7 @@ async function Cities() {
             <p className="font-serif p-4 mb-2 italic text-[1.1rem] text-[#d9cfb8]">Sixteen places chosen carefully -
                 five islands, ten regions. each one with a season when its at its best.</p>
             <CitiesClient citiesWithWeather={citiesWithWeather}/>
-        </div>
+        </section>
     )
 }
 

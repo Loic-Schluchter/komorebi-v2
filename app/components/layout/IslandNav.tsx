@@ -8,10 +8,7 @@ interface IProps {
 }
 
 function IslandNav({selectedIsland, setSelectedIsland}: IProps) {
-
-
     const islands = ["All islands", ...new Set(cities.map(city => city.island))];
-    console.log(islands);
     return (
         <nav className="flex gap-2 overflow-x-auto scrollbar-hide w-full noScrollbar ">
             {islands.map((island) => (

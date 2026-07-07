@@ -51,10 +51,7 @@ function HomeCarousel({ onActiveChange }: { onActiveChange: (index: number) => v
       carousel.addEventListener("scrollend", onScrollEnd);
     }
     carousel.addEventListener("scroll", onScroll);
-
-    // Init
     findCenterCard();
-
     return () => {
       carousel.removeEventListener("scrollend", onScrollEnd);
       carousel.removeEventListener("scroll", onScroll);
@@ -63,15 +60,12 @@ function HomeCarousel({ onActiveChange }: { onActiveChange: (index: number) => v
   }, [findCenterCard]);
 
       const router = useRouter();
-
       function handleClick(city : string) {
         
         router.push(`/cities/${city}`.toLowerCase());
       }
   return (
-
-    <>
-
+    <section>
       <div className="py-4 flex justify-between items-center text-[0.8rem] uppercase tracking-wider">
         <h2 className="text-komorebi-gold text-[0.8rem] uppercase tracking-wider">Destinations · {cities.length}</h2>
         <button className="font-serif italic flex items-center gap-2 text-lg" onClick={() => (router.push("/cities"))}>
@@ -97,7 +91,7 @@ function HomeCarousel({ onActiveChange }: { onActiveChange: (index: number) => v
           </li>
         ))}
       </ul>
-    </>
+    </section>
   );
 }
 

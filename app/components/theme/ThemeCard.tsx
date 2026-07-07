@@ -4,7 +4,7 @@ import {useRouter} from "next/navigation";
 function ThemeCard() {
     const router = useRouter()
     return (
-        <div className="grid grid-cols-2 auto-rows-auto gap-2 my-4">
+        <section className="grid grid-cols-2 auto-rows-auto gap-2 my-4">
             {themes.map((theme) => (
                 <button
                     key={theme.name}
@@ -22,7 +22,7 @@ function ThemeCard() {
                     <p className="relative z-10 font-sans text-[0.7rem] uppercase">{theme.description}</p>
                 </button>
             ))}
-        </div>
+        </section>
     )
 }
 

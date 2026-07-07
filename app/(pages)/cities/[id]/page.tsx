@@ -12,10 +12,11 @@ export default async function Page({params}: { params: Promise<{ id: string }> }
 
     return (
         <div className="w-full bg-linear-to-b from-[#3d2a4a] via-[#1a1f2e] to-[#0F1A14] min-h-svh text-komorebi-ivory ">
-            <div className="p-4">
-                <BackButton size={24}/>
-            </div>
-            <div className="px-8 my-2 flex flex-col gap-2">
+
+            <section className="px-8 my-2 flex flex-col gap-2">
+                <div className="p-4">
+                    <BackButton size={24}/>
+                </div>
                 <div>
                     <span className="text-komorebi-gold font-light">{city.island} · {city.region}</span>
                 </div>
@@ -28,7 +29,7 @@ export default async function Page({params}: { params: Promise<{ id: string }> }
                     <MeteoCard city={city.name}/>
                 </div>
                 <ThingsToDo city={city.name}/>
-            </div>
+            </section>
         </div>
     )
 
