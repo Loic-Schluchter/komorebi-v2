@@ -1,9 +1,15 @@
-import {cities} from "@/app/lib/cities";
+
 import CitiesClient from "@/app/(pages)/cities/CitiesClient";
 import BackButton from "@/app/components/ui/BackButton";
 import {getWeather} from "@/app/lib/weather";
+import {supabase} from "@/app/lib/supabase";
+
 async function Cities() {
 
+    const {data: cities, error} = await supabase.from("cities").select("*")
+
+    if (error) return null;
+    console.log("Returned dataBase : "  + cities)
 
     const weatherData = await Promise.all(
         cities.map(city => getWeather(city.name))
