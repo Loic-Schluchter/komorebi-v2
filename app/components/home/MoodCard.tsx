@@ -4,7 +4,7 @@ import { OpenWeatherMapResponse } from "@/app/types/weather";
 
 type Props = {
   location: string;
-  weather: OpenWeatherMapResponse | null;
+  weather?: OpenWeatherMapResponse | null;
 };
 
 function MoodCard({ location, weather }: Props) {

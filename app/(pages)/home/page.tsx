@@ -7,6 +7,7 @@ import MoodCard from "../../components/home/MoodCard";
 import { cities } from "@/app/lib/cities";
 import {useState} from "react";
 import ThemeSection from "@/app/components/theme/ThemeSection";
+import MoodCardWrapper from "@/app/components/ui/ MoodCardWrapper";
 
 function HomePage() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -17,7 +18,7 @@ function HomePage() {
     <main className="min-h-svh w-screen bg-[#0d1f15] px-6 pt-10 text-[#F2E9D6]">
       <HomeInput />
       <HomeCarousel onActiveChange={setActiveIndex} />
-      <MoodCard location={activeCity.name} />
+      <MoodCardWrapper location={activeCity.name}/>
       <ThemeSection/>
     </main>
   );

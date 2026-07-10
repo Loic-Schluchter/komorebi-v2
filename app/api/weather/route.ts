@@ -14,9 +14,5 @@ export async function GET(request: Request) {
         return Response.json({ error: "Weather not found" }, { status: 404 });
     }
 
-    return Response.json({
-        sunrise: weather.sys.sunrise,
-        sunset: weather.sys.sunset,
-        conditions: weather.weather[0].main,
-    });
+    return Response.json(weather);
 }
