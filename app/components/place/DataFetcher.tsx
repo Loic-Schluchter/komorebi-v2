@@ -1,6 +1,5 @@
 
 import {getPlaceDetails} from "@/app/lib/places";
-
 async function DataFetcher({ searchParams, params} : {searchParams : Promise<{ lat: string; lng: string; placeId: string }> , params: Promise<{ id: string }>}) {
     try {
         const [gpsData, { id }] = await Promise.all([
@@ -9,14 +8,12 @@ async function DataFetcher({ searchParams, params} : {searchParams : Promise<{ l
         ])
 
         if (!gpsData) {
-            console.log("No data found")
             return null
         }
 
         const details = await getPlaceDetails(gpsData.placeId)
 
         if (!details) {
-            console.log("No details found")
             return null
         }
 
@@ -28,7 +25,6 @@ async function DataFetcher({ searchParams, params} : {searchParams : Promise<{ l
 
         return { gpsData, details, photoUrls, id }
     } catch (error) {
-        console.error("An error occurred during fetchData:", error)
         throw new Error("Failed to fetch data")
     }
 

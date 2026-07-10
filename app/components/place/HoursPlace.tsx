@@ -23,7 +23,6 @@ function HoursPlace({details}: { details: PlaceDetails }) {
     const statusColor = isOpen ? "text-green-400" : "text-red-400"
     const statusBg = isOpen ? "bg-green-400/10 border border-green-400/40" : "bg-red-400/20 border border-red-400/40"
 
-    console.log(details)
     return (
         <div className="flex flex-col  border-2 rounded-3xl border-komorebi-gold/40 shadow-komorebi-gold/10 shadow-md overflow-hidden">
             <div className="flex justify-between items-center p-6">

@@ -13,14 +13,12 @@ import {MapPin, PersonStanding} from "lucide-react";
         selfLng : number,
     }
 function PlaceMap({lat, lng} : map) {
-    const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY
+    const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
     const MAP_ID = process.env.NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID
     if (!API_KEY) throw new Error("Missing API key")
     const selfLocation = useGeolocation()
-
     const position = {lat: lat, lng: lng}
-    console.log(selfLocation)
-    console.log(` self position : ${position}`)
+
     return (
         <div className="w-full h-80 flex justify-center items-center border-2 border-komorebi-gold">
             <APIProvider apiKey={API_KEY}>

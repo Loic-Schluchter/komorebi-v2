@@ -7,8 +7,6 @@ import { Star } from "lucide-react"
 import Image from "next/image"
 import {useRouter} from "next/navigation";
 import {slugify} from "@/app/lib/slugify";
-import button from "@/app/components/Button";
-
 
 export function PlacesList({ places }: { places: Place[] }) {
     const location = useGeolocation()
@@ -30,7 +28,7 @@ export function PlacesList({ places }: { places: Place[] }) {
                 const placeSlug = slugify(placeName)
                 const latitude = place.location?.latitude
                 const longitude = place.location?.longitude
-                console.log(place)
+
                 return (
                     <div key={index} className="flex gap-6 my-4">
                         {place.photoUrl && (

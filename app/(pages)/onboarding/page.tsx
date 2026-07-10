@@ -56,7 +56,6 @@ function OnboardingPage() {
    }, [router])
 
   const handleNext = () => {
-    console.log("Next button clicked");
     if (currentStep < steps.length - 1) {
       setCurrentStep(currentStep + 1);
     } else {

@@ -1,5 +1,4 @@
 import {PlaceDetails} from "@/app/types/Place";
-
 const googleURL = "https://places.googleapis.com/v1/places:searchText"
 
 export async function getPlaces(city: string) {
@@ -36,9 +35,6 @@ export async function getPlaceDetails(placeId: string) : Promise<PlaceDetails> {
             }
         }
     )
-
-    console.log("Status:", response.status)
-    console.log("PlaceId:", placeId)
 
     if (!response.ok){
         throw new Error("Failed to fetch place details")

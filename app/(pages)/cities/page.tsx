@@ -9,7 +9,6 @@ async function Cities() {
     const {data: cities, error} = await supabase.from("cities").select("*")
 
     if (error) return null;
-    console.log("Returned dataBase : "  + cities)
 
     const weatherData = await Promise.all(
         cities.map(city => getWeather(city.name))

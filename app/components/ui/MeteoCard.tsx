@@ -1,12 +1,10 @@
+import { OpenWeatherMapResponse } from "@/app/types/weather";
 
-import {getWeather} from "@/app/lib/weather";
-import {OpenWeatherMapResponse} from "@/app/types/weather";
+type Props = {
+    weather: OpenWeatherMapResponse | null;
+};
 
-
-
-async function MeteoCard({city}: {city: string}) {
-    const weather : OpenWeatherMapResponse = await getWeather(city)
-    console.log(city, weather)
+async function MeteoCard({ weather }: Props) {
     if (!weather) return null;
 
     return (
@@ -19,11 +17,13 @@ async function MeteoCard({city}: {city: string}) {
             ].map(({ value, label }) => (
                 <div key={label} className="flex flex-col items-center gap-1">
                     <span className="font-serif italic text-2xl">{value}</span>
-                    <span className="font-sans text-xs tracking-widest uppercase text-white/50">{label}</span>
+                    <span className="font-sans text-xs tracking-widest uppercase text-white/50">
+                        {label}
+                    </span>
                 </div>
             ))}
         </div>
-    )
+    );
 }
 
-export default MeteoCard
+export default MeteoCard;

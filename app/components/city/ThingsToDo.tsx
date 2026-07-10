@@ -8,7 +8,6 @@ import {PlacesList} from "@/app/components/city/PlaceList";
 
 async function ThingsToDo({city}: { city: string }) {
     const places: PlacesResponse = await getPlaces(city)
-    console.log("Places:", places)
     if (!places) return null
 
     const API_KEY = process.env.GOOGLE_PLACES_API_KEY
