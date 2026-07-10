@@ -6,7 +6,6 @@ import {PlaceDetails} from "@/app/types/Place"
 
 function HoursPlace({details}: { details: PlaceDetails }) {
     const [showHours, setShowHours] = useState(false)
-
     const closeTime = details?.currentOpeningHours?.nextCloseTime
         ? new Date(details.currentOpeningHours.nextCloseTime).toLocaleTimeString("ja-JP", {
             hour: "2-digit",
