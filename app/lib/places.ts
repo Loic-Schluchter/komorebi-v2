@@ -14,7 +14,7 @@ export async function getPlaces(city: string) {
                 "X-Goog-FieldMask": "places.name,places.displayName,places.formattedAddress,places.rating,places.photos,places.addressComponents,places.location,places.regularOpeningHours"
             },
             body: JSON.stringify({
-                textQuery: `things to do in ${city}`
+                textQuery: `tourist attractions in ${city}`
             }),
             next: {revalidate: 86400}
         }
