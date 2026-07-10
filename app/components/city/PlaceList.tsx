@@ -7,6 +7,7 @@ import { Star } from "lucide-react"
 import Image from "next/image"
 import {useRouter} from "next/navigation";
 import {slugify} from "@/app/lib/slugify";
+import button from "@/app/components/Button";
 
 
 export function PlacesList({ places }: { places: Place[] }) {
@@ -33,29 +34,34 @@ export function PlacesList({ places }: { places: Place[] }) {
                 return (
                     <div key={index} className="flex gap-6 my-4">
                         {place.photoUrl && (
-
                             <button onClick={() => {
                                 if (!latitude || !longitude) return
                                 router.push(`/place/${placeSlug}?lat=${latitude}&lng=${longitude}&placeId=${encodeURIComponent(place.name ?? '')}`)
                             }}>
-                                <Image
-                                    src={place.photoUrl}
-                                    alt={place.displayName.text}
-                                    width={80}
-                                    height={80}
-                                    className="w-20 h-20 object-cover rounded-2xl"
-                                />
-                            </button>
-                        )}
-                        <div className="flex flex-col">
-                            <p className="text-komorebi-gold">{neighborhood} <span className="text-[0.7rem]">{distance && `· ${distance} km`}</span> </p>
-                            <p className="text-white font-serif text-xl font-bold italic">{place.displayName.text}</p>
-                            <div className="flex gap-2 text-sm items-center text-komorebi-gold">
-                                <Star size={10} color={"yellow"} fill={"yellow"}/>
-                                <p>{place.rating}</p>
+                                <section className="flex gap-6">
+                                    <div >
+                                        <Image
+                                            src={place.photoUrl}
+                                            alt={place.displayName.text}
+                                            width={80}
+                                            height={80}
+                                            className="w-20 h-20 object-cover rounded-2xl"
+                                        />
+                                    </div>
 
-                            </div>
-                        </div>
+                                    <div className="text-left">
+                                        <p className="text-komorebi-gold">{neighborhood} <span className="text-[0.7rem]">{distance && `· ${distance} km`}</span> </p>
+                                        <p className="text-white font-serif text-xl font-bold italic">{place.displayName.text}</p>
+                                        <div className="flex gap-2 text-sm items-center text-komorebi-gold">
+                                            <Star size={10} color={"yellow"} fill={"yellow"}/>
+                                            <p>{place.rating}</p>
+
+                                        </div>
+                                    </div>
+                                </section>
+                            </button>
+
+                        )}
                     </div>
                 )
             })}
