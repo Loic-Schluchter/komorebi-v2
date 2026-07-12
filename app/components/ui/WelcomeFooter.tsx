@@ -1,7 +1,14 @@
 import Button from "./Button";
 import Torii from "./Torii";
+import {cookies} from "next/headers";
 
-function WelcomeFooter() {
+async function WelcomeFooter() {
+
+    const cookieStore = await cookies();
+
+    const completed = cookieStore.get("onboardingCompleted")?.value === "true";
+
+    const href = completed ? "/home" : "/onboarding";
 
   return (
     <div className="flex flex-col justify-center items-center w-full gap-2 mb-10 ">
@@ -9,7 +16,7 @@ function WelcomeFooter() {
         <Torii />
       </div>
       <div className="w-3/4 flex justify-center">
-        <Button href="/onboarding">Begin the journey</Button>
+        <Button href={href}>Begin the journey</Button>
 
       </div>
       <p className="z-10 text-[14px]">

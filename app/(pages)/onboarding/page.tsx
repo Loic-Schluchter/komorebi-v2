@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Button from "../../components/ui/Button";
 import { Dot } from "lucide-react";
@@ -49,23 +49,17 @@ function OnboardingPage() {
   const router = useRouter();
   const [currentStep, setCurrentStep] = useState(0);
 
-  useEffect(() => {
-    if (localStorage.getItem('onboardingCompleted') === 'true') {
-      router.replace('/home');
-    }
-   }, [router])
-
   const handleNext = () => {
     if (currentStep < steps.length - 1) {
       setCurrentStep(currentStep + 1);
     } else {
-      localStorage.setItem("onboardingCompleted", "true");
+      document.cookie = "onboardingCompleted=true; path=/; max-age=31536000";
       router.push("/home");
     }
   };
 
   const handleSkip = () => {
-    localStorage.setItem("onboardingCompleted", "true");
+    document.cookie = "onboardingCompleted=true; path=/; max-age=31536000";
     router.push("/home");
   };
 
