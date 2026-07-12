@@ -64,43 +64,47 @@ function OnboardingPage() {
   };
 
   return (
-    <motion.div
-      initial={{ scale: 0 }}
-      animate={{ scale: 1 }}
+    <main
       className="w-screen h-svh flex flex-col"
       style={{
         background: `linear-gradient(to bottom, ${steps[currentStep].bgColor} 20%, #0d1f15 60%)`,
       }}
     >
-      <div className="absolute z-10 flex justify-between items-center w-full p-6">
-        <ProgressionBar currentStep={currentStep} total={steps.length} />
-        <button className="text-white" onClick={handleSkip}>
-          SKIP
-        </button>
-      </div>
-      <div className=" relative w-full h-full ">
-        <Image
-          src={steps[currentStep].image}
-          alt={steps[currentStep].label}
-          fill
-          sizes="width: 800px, height: 800px"
-          className="object-cover"
-          priority
-        />
-      </div>
+      <motion.section className="w-screen h-svh flex flex-col"
+                      initial={{ opacity: 0, scale: 0.98 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.4 }}>
+        <div className="absolute z-10 flex justify-between items-center w-full p-6">
+          <ProgressionBar currentStep={currentStep} total={steps.length} />
+          <button className="text-white" onClick={handleSkip}>
+            SKIP
+          </button>
+        </div>
+        <div className=" relative w-full h-full ">
+          <Image
+              src={steps[currentStep].image}
+              alt={steps[currentStep].label}
+              fill
+              sizes="width: 800px, height: 800px"
+              className="object-cover"
+              priority
+          />
+        </div>
 
-      <div className="flex flex-col items-start justify-center gap-4 px-10 h-200">
-        <div className="flex gap-2 text-komorebi-gold text-xl ">
-          <span className="font-japanese">{steps[currentStep].kanji}</span> <Dot />{" "}
-          <span className="font-serif font-bold ">{steps[currentStep].label}</span>
+        <div className="flex flex-col items-start justify-center gap-4 px-10 h-200">
+          <div className="flex gap-2 text-komorebi-gold text-xl ">
+            <span className="font-japanese">{steps[currentStep].kanji}</span> <Dot />{" "}
+            <span className="font-serif font-bold ">{steps[currentStep].label}</span>
+          </div>
+          <h1 className=" font-serif text-5xl italic text-white text-balance">{steps[currentStep].title}</h1>
+          <p className="text-[1rem] text-white">{steps[currentStep].description}</p>
+          <div className=" flex justify-center w-full mt-6">
+            <Button onClick={handleNext}>{currentStep === steps.length - 1 ? "Enter Komorebi" : "Continue"}</Button>
+          </div>
         </div>
-        <h1 className=" font-serif text-5xl italic text-white text-balance">{steps[currentStep].title}</h1>
-        <p className="text-[1rem] text-white">{steps[currentStep].description}</p>
-        <div className=" flex justify-center w-full mt-6">
-          <Button onClick={handleNext}>{currentStep === steps.length - 1 ? "Enter Komorebi" : "Continue"}</Button>
-        </div>
-      </div>
-    </motion.div>
+      </motion.section>
+
+    </main>
   );
 }
 
