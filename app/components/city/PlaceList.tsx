@@ -37,7 +37,7 @@ export function PlacesList({ places }: { places: Place[] }) {
                                 router.push(`/place/${placeSlug}?lat=${latitude}&lng=${longitude}&placeId=${encodeURIComponent(place.name ?? '')}`)
                             }}>
                                 <section className="flex gap-6">
-                                    <div >
+                                    <div className="w-20 h-20 shrink-0 ">
                                         <Image
                                             src={place.photoUrl}
                                             alt={place.displayName.text}
