@@ -1,13 +1,16 @@
 'use client'
-import {cities} from "@/app/lib/cities";
+import {CityWithWeather} from "@/app/types/City";
 
 
 interface IProps {
     selectedIsland: string,
     setSelectedIsland: (island: string) => void,
+    cities: CityWithWeather[];
 }
 
-function IslandNav({selectedIsland, setSelectedIsland}: IProps) {
+function IslandNav({selectedIsland, setSelectedIsland, cities}: IProps) {
+
+
     const islands = ["All islands", ...new Set(cities.map(city => city.island))];
     return (
         <nav className="flex gap-2 overflow-x-auto scrollbar-hide w-full noScrollbar ">

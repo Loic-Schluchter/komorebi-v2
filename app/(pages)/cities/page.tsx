@@ -7,7 +7,6 @@ import {supabase} from "@/app/lib/supabase";
 async function Cities() {
 
     const {data: cities, error} = await supabase.from("cities").select("*")
-
     if (error) return null;
 
     const weatherData = await Promise.all(

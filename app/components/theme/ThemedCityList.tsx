@@ -1,15 +1,19 @@
-import {cities} from "@/app/lib/cities";
+
 import CityCard from "@/app/components/city/CityCard";
 import {getWeather} from "@/app/lib/weather";
+import {supabase} from "@/app/lib/supabase";
 
 
 async function ThemedCityList({theme}: {theme: string}) {
     if (!theme) {
+        console.error("Theme is undefined");
         return null;
     }
-    const themedCities = cities.filter(
-        city => city.theme === theme
-    );
+    const {data : themedCities, error} = await supabase.from("cities").select("*").eq("theme", theme)
+    if (error) {
+        console.error("Error fetching themed cities:", error);
+        return null;
+    }
     if (themedCities.length === 0) {
         return (
             <div>

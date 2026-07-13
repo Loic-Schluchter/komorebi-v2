@@ -1,17 +1,18 @@
-import {cities} from "@/app/lib/cities";
 import BackButton from "@/app/components/ui/BackButton";
 import MoodCard from "@/app/components/home/MoodCard";
 import MeteoCard from "@/app/components/ui/MeteoCard";
 import ThingsToDo from "@/app/components/city/ThingsToDo";
 import {getWeather} from "@/app/lib/weather";
+import {supabase} from "@/app/lib/supabase";
 
 export default async function Page({params}: { params: Promise<{ id: string }> }) {
     const {id} = await params;
 
-    const city = cities.find(c => c.slug === id);
-
-    if (!city) return <div>Ville non trouvée</div>;
-
+    const {data: city, error}= await supabase.from("cities").select("*").eq("slug", id).single();
+    if (error) {
+        console.error("Erreur Supabase (cities):", error.message, error.details);
+        return <div>Ville non trouvée</div>;
+    }
     const weather = await getWeather(city.name);
 
     return (
