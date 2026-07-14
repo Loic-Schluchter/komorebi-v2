@@ -23,7 +23,7 @@ export async function Page({
                     />
                     <PlaceStats details={data.details} />
                     <About details={data.details} />
-                    <Location gpsData={data.gpsData} />
+                    <Location gpsData={data.gpsData} name={data.details.displayName.text}/>
                 </div>
             </div>
         )
