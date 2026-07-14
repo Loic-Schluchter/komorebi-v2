@@ -22,6 +22,8 @@ Next.js · Supabase · Tailwind CSS · Motion · Google Maps Platform · TypeScr
 - **Scroll-linked animations** built with Motion's `useMotionValue`/`useTransform` — the destination carousel scales and fades cards based on real scroll position, without triggering React re-renders on every frame.
 - **Server-rendered data** — cities and places are fetched directly from Supabase in Server Components, so the page ships with real content, not a loading spinner.
 
----
+## License
+
+This project is shared for portfolio purposes. All rights reserved — please don't reuse the code without permission.
 
 *Built with 🍃 and a love for quiet places.*
