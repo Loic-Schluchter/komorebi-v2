@@ -1,6 +1,6 @@
 import React from 'react'
 import PlaceMap from "./PlaceMap"
-import {GpsType} from "@/app/types/GpsData";
+import {GpsType} from "@/app/components/place/GpsType";
 
 type LocationProps = {
     gpsData: GpsType,
