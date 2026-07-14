@@ -4,6 +4,7 @@ import { MoveRight } from "lucide-react";
 import Image from "next/image";
 import React, { useEffect, useRef, useCallback } from "react";
 import {useRouter} from "next/navigation";
+import { motion } from "motion/react";
 
 
 function HomeCarousel({ onActiveChange }: { onActiveChange: (index: number) => void }) {
@@ -61,7 +62,7 @@ function HomeCarousel({ onActiveChange }: { onActiveChange: (index: number) => v
 
       const router = useRouter();
       function handleClick(city : string) {
-        
+
         router.push(`/cities/${city}`.toLowerCase());
       }
   return (
@@ -79,7 +80,15 @@ function HomeCarousel({ onActiveChange }: { onActiveChange: (index: number) => v
             data-index={index}
             className="snap-center shrink-0 relative w-65 h-90 rounded-2xl overflow-hidden"
           >
-            <Image src={city.image} alt={city.name} fill className="object-cover" />
+            <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4 }}
+                className="absolute inset-0"
+            >
+              <Image src={city.image} alt={city.name} fill className="object-cover" />
+            </motion.div>
+
             <div className="absolute inset-0 bg-linear-to-b from-transparent to-black/60" />
             <div className="absolute inset-0 p-5 flex flex-col">
               <p className="font-japanese text-2xl text-komorebi-gold">{city.japaneseName}</p>
