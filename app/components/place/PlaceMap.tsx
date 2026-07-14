@@ -2,8 +2,8 @@
 
 import React from 'react'
 import {AdvancedMarker, APIProvider, Map} from "@vis.gl/react-google-maps";
-import {useGeolocation} from "@/app/hooks/geoLocalisation";
 import {MapPin, PersonStanding, Map as MapIcon} from "lucide-react";
+import {useGeolocation} from "@/app/providers/GeolocationProvider";
 
 type PlaceMapProps = {
     lat: number,

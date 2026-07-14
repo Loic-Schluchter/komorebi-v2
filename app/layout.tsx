@@ -1,6 +1,7 @@
 import type {Metadata} from "next";
 import {Cormorant_Garamond, Inter, Shippori_Mincho} from "next/font/google";
 import "./globals.css";
+import {GeolocationProvider} from "@/app/providers/GeolocationProvider";
 
 const cormorant = Cormorant_Garamond({
     variable: "--font-cormorant",
@@ -52,7 +53,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" className={`${cormorant.variable} ${shippori.variable} ${inter.variable} h-full antialiased`}>
-        <body className="min-h-full flex flex-col font-sans">{children}</body>
+        <body className="min-h-full flex flex-col font-sans">{
+            <GeolocationProvider>{children}</GeolocationProvider>
+        }</body>
         </html>
     );
 }

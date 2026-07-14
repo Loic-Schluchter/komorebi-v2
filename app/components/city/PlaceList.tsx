@@ -1,12 +1,12 @@
 'use client'
 
 import { Place } from "@/app/types/Place"
-import { useGeolocation } from "@/app/hooks/geoLocalisation"
 import { calculateDistance } from "@/app/lib/distance"
 import { Star } from "lucide-react"
 import Image from "next/image"
 import {useRouter} from "next/navigation";
 import {slugify} from "@/app/lib/slugify";
+import {useGeolocation} from "@/app/providers/GeolocationProvider";
 
 export function PlacesList({ places }: { places: Place[] }) {
     const location = useGeolocation()
