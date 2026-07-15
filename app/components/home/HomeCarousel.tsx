@@ -68,7 +68,7 @@ function HomeCarousel({ onActiveChange }: { onActiveChange: (index: number) => v
     <section>
       <div className="py-4 flex justify-between items-center text-[0.8rem] uppercase tracking-wider">
         <h2 className="text-komorebi-gold text-[0.8rem] uppercase tracking-wider">Destinations · {cities.length}</h2>
-        <button className="font-serif italic flex items-center gap-2 text-lg" onClick={() => (router.push("/cities"))}>
+        <button aria-label="See all" className="font-serif italic flex items-center gap-2 text-lg" onClick={() => (router.push("/cities"))}>
           See all <MoveRight size={16} />
         </button>
       </div>
@@ -85,7 +85,7 @@ function HomeCarousel({ onActiveChange }: { onActiveChange: (index: number) => v
               <p className="font-japanese text-2xl text-komorebi-gold">{city.japaneseName}</p>
               <h3 className="font-serif text-4xl italic">{city.name}</h3>
             </div>
-            <button className="absolute bottom-4 right-4 bg-[#B8392C] text-white p-2 rounded-full hover:opacity-90 transition-opacity" onClick={()=> handleClick(city.name)}>
+            <button aria-label="next" className="absolute bottom-4 right-4 bg-[#B8392C] text-white p-2 rounded-full hover:opacity-90 transition-opacity" onClick={()=> handleClick(city.name)}>
               <MoveRight size={20} />
             </button>
           </li>

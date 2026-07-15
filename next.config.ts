@@ -9,8 +9,10 @@ const nextConfig: NextConfig = {
                 protocol: "https",
                 hostname: "places.googleapis.com"
             }
-        ]
+        ],
+
     },
+    devIndicators: false,
 
     async headers() {
         return [

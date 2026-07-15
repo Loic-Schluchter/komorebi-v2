@@ -99,7 +99,7 @@ function OnboardingPage() {
           <h1 className=" font-serif text-5xl italic text-white text-balance">{steps[currentStep].title}</h1>
           <p className="text-[1rem] text-white">{steps[currentStep].description}</p>
           <div className=" flex justify-center w-full mt-6">
-            <Button onClick={handleNext}>{currentStep === steps.length - 1 ? "Enter Komorebi" : "Continue"}</Button>
+            <Button ariaLabel="next" onClick={handleNext}>{currentStep === steps.length - 1 ? "Enter Komorebi" : "Continue"}</Button>
           </div>
         </div>
       </motion.section>
