@@ -76,9 +76,9 @@ function OnboardingPage() {
                       transition={{ duration: 0.4 }}>
         <div className="absolute z-10 flex justify-between items-center w-full p-6">
           <ProgressionBar currentStep={currentStep} total={steps.length} />
-          <Button  onClick={handleSkip} ariaLabel="next">
+          <button className="text-white" onClick={handleSkip}>
             SKIP
-          </Button>
+          </button>
         </div>
         <div className=" relative w-full h-full ">
           <Image
@@ -99,7 +99,7 @@ function OnboardingPage() {
           <h1 className=" font-serif text-5xl italic text-white text-balance">{steps[currentStep].title}</h1>
           <p className="text-[1rem] text-white">{steps[currentStep].description}</p>
           <div className=" flex justify-center w-full mt-6">
-            <Button ariaLabel="Continue" onClick={handleNext}>{currentStep === steps.length - 1 ? "Enter Komorebi" : "Continue"}</Button>
+            <Button onClick={handleNext}>{currentStep === steps.length - 1 ? "Enter Komorebi" : "Continue"}</Button>
           </div>
         </div>
       </motion.section>

@@ -16,7 +16,7 @@ async function WelcomeFooter() {
         <Torii />
       </div>
       <div className="w-3/4 flex justify-center">
-        <Button href={href} ariaLabel="begin the journey">Begin the journey</Button>
+        <Button href={href}>Begin the journey</Button>
 
       </div>
       <p className="z-10 text-[14px]">

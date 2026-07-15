@@ -4,8 +4,6 @@ const nextConfig: NextConfig = {
 
     allowedDevOrigins: ['192.168.1.105'],
     images: {
-        formats: ['image/avif', 'image/webp'],
-        qualities: [25, 50, 75],
         remotePatterns: [
             {
                 protocol: "https",
@@ -27,12 +25,6 @@ const nextConfig: NextConfig = {
             },
         ];
     },
-
-    compiler: {
-        removeConsole: process.env.NODE_ENV === 'production',
-    },
-
-    productionBrowserSourceMaps: false,
 
 };
 
