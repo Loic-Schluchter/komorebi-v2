@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 木漏れ日 Komorebi
 
-## Getting Started
+> *Komorebi (木漏れ日) — the sunlight that filters through the leaves of trees.*
 
-First, run the development server:
+A travel discovery app for exploring Japan's cities — matched to your mood, the weather, and what's around you.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**[Live demo →](https://komorebi-v2.vercel.app/)**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![Komorebi preview](./preview.png)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## What it does
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Browse Japanese cities and islands, check live weather, get mood-based recommendations, and find curated places to visit — each with photos, ratings, and one-tap directions to Google Maps.
 
-## Learn More
+## Stack
 
-To learn more about Next.js, take a look at the following resources:
+Next.js · Supabase · Tailwind CSS · Motion · Google Maps Platform · TypeScript
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## A few things worth mentioning
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Shared geolocation** via React Context — one permission prompt and one GPS call, reused across every component that needs the user's position, instead of each one requesting it separately.
+- **Scroll-linked animations** built with Motion's `useMotionValue`/`useTransform` — the destination carousel scales and fades cards based on real scroll position, without triggering React re-renders on every frame.
+- **Server-rendered data** — cities and places are fetched directly from Supabase in Server Components, so the page ships with real content, not a loading spinner.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is shared for portfolio purposes. All rights reserved — please don't reuse the code without permission.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*Built with 🍃 and a love for quiet places.*
