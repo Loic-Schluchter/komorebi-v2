@@ -6,20 +6,29 @@ type ButtonProps = {
   children: React.ReactNode;
   href?: string;
   onClick?: () => void;
+  ariaLabel?: string;
 };
 
-function Button({ children, href, onClick }: ButtonProps) {
+function Button({ children, href, onClick, ariaLabel }: ButtonProps) {
   const className =
-    "bg-[#B8392C] w-full py-3 rounded-full text-[14px] font-bold uppercase text-white shadow-red-800/10 shadow-xl z-10 text-center";
+      "absolute bottom-4 right-4 bg-[#B8392C] text-white p-2 rounded-full hover:opacity-90 transition-opacity"
 
   if (href) {
     return (
-      <Link href={href} className={className}>
-        {children}
-      </Link>
+        <Link href={href} className={className}>
+          {children}
+        </Link>
     );
   }
-  return <button className={className} onClick={onClick}>{children}</button>;
-}
 
+  return (
+      <button
+          aria-label={ariaLabel}
+          className={className}
+          onClick={onClick}
+      >
+        {children}
+      </button>
+  );
+}
 export default Button;
