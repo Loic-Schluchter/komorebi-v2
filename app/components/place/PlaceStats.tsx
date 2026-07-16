@@ -10,7 +10,7 @@ function PlaceStats({details}: {details: PlaceDetails})  {
                     <p className="text-white/50 text-xs uppercase tracking-widest">Rating</p>
                     <p className="flex items-center gap-1 text-komorebi-gold">
                         <Star size={12} fill="currentColor" />
-                        <span className="font-serif italic text-lg">{details.rating}</span>
+                        <span className="font-serif italic text-lg">{details.rating ?? "—"}</span>
                     </p>
                 </div>
 
@@ -22,9 +22,9 @@ function PlaceStats({details}: {details: PlaceDetails})  {
                 </div>
 
                 <div className="flex flex-col gap-1">
-                    <p className="text-white/50 text-xs uppercase tracking-widest">Dogs</p>
+                    <p className="text-white/50 text-xs uppercase tracking-widest">Status</p>
                     <p className="font-serif italic text-lg text-komorebi-ivory">
-                        {details.allowsDogs ? "Welcome" : "No"}
+                        {details.currentOpeningHours?.openNow ? "Open" : "Closed"}
                     </p>
                 </div>
             </div>

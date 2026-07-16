@@ -31,14 +31,18 @@ export async function getPlaceDetails(placeId: string) : Promise<PlaceDetails> {
         {
             headers: {
                 "X-Goog-Api-Key": API_KEY!,
-                "X-Goog-FieldMask": "displayName,regularOpeningHours,rating,currentOpeningHours,editorialSummary,priceLevel,photos,allowsDogs "
-            }
+                // editorialSummary et allowsDogs retirés : ils déclenchent le SKU
+                // "Enterprise + Atmosphere" (quota gratuit = 1000/mois seulement)
+                "X-Goog-FieldMask": "displayName,regularOpeningHours,rating,currentOpeningHours,priceLevel,photos"
+            },
+            next: { revalidate: 86400 } // cache 24h, évite de refacturer à chaque visite
         }
     )
 
     if (!response.ok){
         throw new Error("Failed to fetch place details")
     }
+
     return response.json()
 }
 
