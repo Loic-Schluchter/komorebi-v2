@@ -10,9 +10,9 @@ async function Page({params}: { params: Promise<{ id: string }> }) {
     const filteredTheme = theme.find(t => t.name === id)
     if (!filteredTheme) return <div>Theme not found</div>
     return (
-        <div>
+        <div className="min-h-dvh bg-[#0f1a14]">
             <ThemeHeader filters={filteredTheme} />
-            <div className="w-full p-6 bg-[#0f1a14]">
+            <div className="w-full p-6 ">
                 <section className=" font-serif italic flex flex-col gap-4 mb-10">
                     <div className="flex-1 border-t border-komorebi-gold/30" />
                     <h2 className="text-komorebi-ivory text-2xl ">{filteredTheme.title}</h2>

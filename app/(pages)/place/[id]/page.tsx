@@ -15,7 +15,7 @@ export async function Page({
         const data = await DataFetcher({params, searchParams})
         if (!data) return <div>Place not found</div>
         return (
-            <div className="w-full bg-linear-to-b from-[#3d2a4a] via-[#1a1f2e] to-[#0F1A14] min-h-svh text-komorebi-ivory">
+            <div className="w-full bg-linear-to-b from-[#3d2a4a] via-[#1a1f2e] to-[#0F1A14] min-h-dvh text-komorebi-ivory">
                 <PhotoCarousel photoUrls={data.photoUrls} />
                 <div className="px-6 flex flex-col gap-6 mt-4">
                     <PlaceHeader
